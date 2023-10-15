@@ -1,0 +1,10 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "files.associations": {
+    "freertos.h": "c",
+    "string.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled",
+  "idf.adapterTargetName": "esp32",
+  "idf.flashType": "UART"
+}

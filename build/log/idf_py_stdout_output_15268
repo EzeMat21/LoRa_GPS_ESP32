@@ -1,0 +1,462 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0afb8h ( 44984) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001afe0 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001d140 vaddr=40080000 size=02ed8h ( 11992) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=196f8h (104184) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=00039720 vaddr=40082ed8 size=0a224h ( 41508) load[0m
+[0;32mI (196) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (196) boot: Disabling RNG early entropy source...[0m
+[0;32mI (208) cpu_start: Multicore app[0m
+[0;32mI (208) cpu_start: Pro cpu up.[0m
+[0;32mI (208) cpu_start: Starting app cpu, entry point is 0x400811e4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (226) cpu_start: Pro cpu start user code[0m
+[0;32mI (226) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (226) cpu_start: Application information:[0m
+[0;32mI (231) cpu_start: Project name:     nmea_parser[0m
+[0;32mI (236) cpu_start: App version:      1[0m
+[0;32mI (241) cpu_start: Compile time:     Oct 15 2023 03:01:35[0m
+[0;32mI (247) cpu_start: ELF file SHA256:  ec39515d2bb64137...[0m
+[0;32mI (253) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (258) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (262) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (267) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (272) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (279) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (285) heap_init: At 3FFB29C8 len 0002D638 (181 KiB): DRAM[0m
+[0;32mI (291) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (298) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (304) heap_init: At 4008D0FC len 00012F04 (75 KiB): IRAM[0m
+[0;32mI (312) spi_flash: detected chip: gd[0m
+[0;32mI (315) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (332) app_start: Starting scheduler on CPU0[0m
+[0;32mI (337) app_start: Starting scheduler on CPU1[0m
+[0;32mI (337) main_task: Started on CPU0[0m
+[0;32mI (347) main_task: Calling app_main()[0m
+[0;32mI (347) uart: queue free spaces: 16[0m
+[0;32mI (347) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (557) uart: queue free spaces: 16[0m
+[0;32mI (557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (757) uart: queue free spaces: 16[0m
+[0;32mI (757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (957) uart: queue free spaces: 16[0m
+[0;32mI (957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (1157) uart: queue free spaces: 16[0m
+[0;32mI (1157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (1357) uart: queue free spaces: 16[0m
+[0;32mI (1357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (1557) uart: queue free spaces: 16[0m
+[0;32mI (1557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (1757) uart: queue free spaces: 16[0m
+[0;32mI (1757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (1957) uart: queue free spaces: 16[0m
+[0;32mI (1957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (2157) uart: queue free spaces: 16[0m
+[0;33mW (2157) nmea_parser: Rx Break[0m
+[0;32mI (2157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (2357) uart: queue free spaces: 16[0m
+[0;32mI (2357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (2557) uart: queue free spaces: 16[0m
+[0;32mI (2557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (2757) uart: queue free spaces: 16[0m
+[0;32mI (2757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (2957) uart: queue free spaces: 16[0m
+[0;32mI (2957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (3157) uart: queue free spaces: 16[0m
+[0;32mI (3157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (3357) uart: queue free spaces: 16[0m
+[0;32mI (3357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (3557) uart: queue free spaces: 16[0m
+[0;32mI (3557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (3757) uart: queue free spaces: 16[0m
+[0;32mI (3757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (3957) uart: queue free spaces: 16[0m
+[0;32mI (3957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (4157) uart: queue free spaces: 16[0m
+[0;33mW (4157) nmea_parser: Rx Break[0m
+[0;32mI (4157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (4207) gps_demo: Unknown statement:.00,,,,,0,00,99.99,,,,,,*64
+[0m
+[0;32mI (4357) uart: queue free spaces: 16[0m
+[0;32mI (4357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (4557) uart: queue free spaces: 16[0m
+[0;32mI (4557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (4757) uart: queue free spaces: 16[0m
+[0;32mI (4757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (4957) uart: queue free spaces: 16[0m
+[0;32mI (4957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (5157) uart: queue free spaces: 16[0m
+[0;32mI (5157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (5177) gps_demo: Unknown statement:,,,0,00,99.99,,,,,,*65
+[0m
+[0;32mI (5357) uart: queue free spaces: 16[0m
+[0;32mI (5357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (5557) uart: queue free spaces: 16[0m
+[0;32mI (5557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (5757) uart: queue free spaces: 16[0m
+[0;32mI (5757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (5957) uart: queue free spaces: 16[0m
+[0;32mI (5957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (6157) uart: queue free spaces: 16[0m
+[0;32mI (6157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (6357) uart: queue free spaces: 16[0m
+[0;32mI (6357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (6557) uart: queue free spaces: 16[0m
+[0;32mI (6557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (6757) uart: queue free spaces: 16[0m
+[0;32mI (6757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (6957) uart: queue free spaces: 16[0m
+[0;32mI (6957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (7157) uart: queue free spaces: 16[0m
+[0;32mI (7157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (7357) uart: queue free spaces: 16[0m
+[0;33mW (7357) nmea_parser: Rx Break[0m
+[0;32mI (7357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (7557) uart: queue free spaces: 16[0m
+[0;32mI (7557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (7757) uart: queue free spaces: 16[0m
+[0;32mI (7757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (7957) uart: queue free spaces: 16[0m
+[0;32mI (7957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (8157) uart: queue free spaces: 16[0m
+[0;33mW (8157) nmea_parser: Rx Break[0m
+[0;32mI (8157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (8357) uart: queue free spaces: 16[0m
+[0;32mI (8357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (8557) uart: queue free spaces: 16[0m
+[0;32mI (8557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (8757) uart: queue free spaces: 16[0m
+[0;32mI (8757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (8957) uart: queue free spaces: 16[0m
+[0;32mI (8957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (9157) uart: queue free spaces: 16[0m
+[0;32mI (9157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (9177) gps_demo: Unknown statement:X,,,0,00,99.99,,,,,,*62
+[0m
+[0;32mI (9357) uart: queue free spaces: 16[0m
+[0;32mI (9357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (9557) uart: queue free spaces: 16[0m
+[0;32mI (9557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (9757) uart: queue free spaces: 16[0m
+[0;32mI (9757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (9957) uart: queue free spaces: 16[0m
+[0;32mI (9957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (10157) uart: queue free spaces: 16[0m
+[0;33mW (10157) nmea_parser: Rx Break[0m
+[0;32mI (10157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (10357) uart: queue free spaces: 16[0m
+[0;32mI (10357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (10557) uart: queue free spaces: 16[0m
+[0;32mI (10557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (10757) uart: queue free spaces: 16[0m
+[0;32mI (10757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (10957) uart: queue free spaces: 16[0m
+[0;32mI (10957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (11157) uart: queue free spaces: 16[0m
+[0;32mI (11157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (11357) uart: queue free spaces: 16[0m
+[0;32mI (11357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (11557) uart: queue free spaces: 16[0m
+[0;32mI (11557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (11757) uart: queue free spaces: 16[0m
+[0;32mI (11757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (11957) uart: queue free spaces: 16[0m
+[0;32mI (11957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (12157) uart: queue free spaces: 16[0m
+[0;33mW (12157) nmea_parser: Rx Break[0m
+[0;32mI (12157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (12357) uart: queue free spaces: 16[0m
+[0;32mI (12357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (12557) uart: queue free spaces: 16[0m
+[0;32mI (12557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (12757) uart: queue free spaces: 16[0m
+[0;32mI (12757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (12957) uart: queue free spaces: 16[0m
+[0;32mI (12957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (13157) uart: queue free spaces: 16[0m
+[0;32mI (13157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (13357) uart: queue free spaces: 16[0m
+[0;32mI (13357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (13557) uart: queue free spaces: 16[0m
+[0;32mI (13557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (13757) uart: queue free spaces: 16[0m
+[0;32mI (13757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (13957) uart: queue free spaces: 16[0m
+[0;32mI (13957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (14157) uart: queue free spaces: 16[0m
+[0;32mI (14157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (14357) uart: queue free spaces: 16[0m
+[0;32mI (14357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (14557) uart: queue free spaces: 16[0m
+[0;32mI (14557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (14757) uart: queue free spaces: 16[0m
+[0;32mI (14757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (14957) uart: queue free spaces: 16[0m
+[0;32mI (14957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (15157) uart: queue free spaces: 16[0m
+[0;32mI (15157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (15357) uart: queue free spaces: 16[0m
+[0;32mI (15357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (15557) uart: queue free spaces: 16[0m
+[0;32mI (15557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (15757) uart: queue free spaces: 16[0m
+[0;32mI (15757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (15957) uart: queue free spaces: 16[0m
+[0;32mI (15957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (16157) uart: queue free spaces: 16[0m
+[0;32mI (16157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (16357) uart: queue free spaces: 16[0m
+[0;32mI (16357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (16557) uart: queue free spaces: 16[0m
+[0;32mI (16557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (16757) uart: queue free spaces: 16[0m
+[0;32mI (16757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (16957) uart: queue free spaces: 16[0m
+[0;32mI (16957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (17157) uart: queue free spaces: 16[0m
+[0;32mI (17157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (17177) gps_demo: Unknown statement:,,,0,00,99.99,,,,,,*6A
+[0m
+[0;32mI (17357) uart: queue free spaces: 16[0m
+[0;32mI (17357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (17557) uart: queue free spaces: 16[0m
+[0;32mI (17557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (17757) uart: queue free spaces: 16[0m
+[0;32mI (17757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (17957) uart: queue free spaces: 16[0m
+[0;32mI (17957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (18157) uart: queue free spaces: 16[0m
+[0;32mI (18157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (18177) gps_demo: Unknown statement:,,,0,00,99.99,,,,,,*60
+[0m
+[0;32mI (18357) uart: queue free spaces: 16[0m
+[0;32mI (18357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (18557) uart: queue free spaces: 16[0m
+[0;32mI (18557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (18757) uart: queue free spaces: 16[0m
+[0;32mI (18757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (18957) uart: queue free spaces: 16[0m
+[0;32mI (18957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (19157) uart: queue free spaces: 16[0m
+[0;32mI (19157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (19357) uart: queue free spaces: 16[0m
+[0;32mI (19357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (19557) uart: queue free spaces: 16[0m
+[0;32mI (19557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (19757) uart: queue free spaces: 16[0m
+[0;32mI (19757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (19957) uart: queue free spaces: 16[0m
+[0;32mI (19957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (20157) uart: queue free spaces: 16[0m
+[0;32mI (20157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (20357) uart: queue free spaces: 16[0m
+[0;32mI (20357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (20557) uart: queue free spaces: 16[0m
+[0;32mI (20557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (20757) uart: queue free spaces: 16[0m
+[0;32mI (20757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (20957) uart: queue free spaces: 16[0m
+[0;32mI (20957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (21157) uart: queue free spaces: 16[0m
+[0;32mI (21157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (21357) uart: queue free spaces: 16[0m
+[0;32mI (21357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (21557) uart: queue free spaces: 16[0m
+[0;32mI (21557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (21757) uart: queue free spaces: 16[0m
+[0;32mI (21757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (21957) uart: queue free spaces: 16[0m
+[0;32mI (21957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (22157) uart: queue free spaces: 16[0m
+[0;32mI (22157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (22357) uart: queue free spaces: 16[0m
+[0;32mI (22357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (22557) uart: queue free spaces: 16[0m
+[0;32mI (22557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (22757) uart: queue free spaces: 16[0m
+[0;32mI (22757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (22957) uart: queue free spaces: 16[0m
+[0;32mI (22957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (23157) uart: queue free spaces: 16[0m
+[0;33mW (23157) nmea_parser: Rx Break[0m
+[0;32mI (23157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (23207) gps_demo: Unknown statement:,,,,0,00,99.99,,,,,,*65
+[0m
+[0;32mI (23357) uart: queue free spaces: 16[0m
+[0;32mI (23357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (23557) uart: queue free spaces: 16[0m
+[0;32mI (23557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (23757) uart: queue free spaces: 16[0m
+[0;32mI (23757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (23957) uart: queue free spaces: 16[0m
+[0;32mI (23957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (24157) uart: queue free spaces: 16[0m
+[0;32mI (24157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (24357) uart: queue free spaces: 16[0m
+[0;32mI (24357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (24557) uart: queue free spaces: 16[0m
+[0;32mI (24557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (24757) uart: queue free spaces: 16[0m
+[0;32mI (24757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (24957) uart: queue free spaces: 16[0m
+[0;32mI (24957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (25157) uart: queue free spaces: 16[0m
+[0;32mI (25157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (25357) uart: queue free spaces: 16[0m
+[0;32mI (25357) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (25397) gps_demo: Unknown statement:�P)�1,,,,,,,,,,,,,99.99,99.99,99.99*30
+[0m
+[0;32mI (25557) uart: queue free spaces: 16[0m
+[0;32mI (25557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (25757) uart: queue free spaces: 16[0m
+[0;32mI (25757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (25957) uart: queue free spaces: 16[0m
+[0;32mI (25957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (26157) uart: queue free spaces: 16[0m
+[0;33mW (26157) nmea_parser: Rx Break[0m
+[0;32mI (26157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (26357) uart: queue free spaces: 16[0m
+[0;32mI (26357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (26557) uart: queue free spaces: 16[0m
+[0;32mI (26557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (26757) uart: queue free spaces: 16[0m
+[0;32mI (26757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (26957) uart: queue free spaces: 16[0m
+[0;32mI (26957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (27157) uart: queue free spaces: 16[0m
+[0;32mI (27157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (27357) uart: queue free spaces: 16[0m
+[0;32mI (27357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (27557) uart: queue free spaces: 16[0m
+[0;32mI (27557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (27757) uart: queue free spaces: 16[0m
+[0;32mI (27757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (27957) uart: queue free spaces: 16[0m
+[0;32mI (27957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (28157) uart: queue free spaces: 16[0m
+[0;32mI (28157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (28177) gps_demo: Unknown statement:,,,0,00,99.99,,,,,,*61
+[0m
+[0;32mI (28357) uart: queue free spaces: 16[0m
+[0;32mI (28357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (28557) uart: queue free spaces: 16[0m
+[0;32mI (28557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (28757) uart: queue free spaces: 16[0m
+[0;32mI (28757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (28957) uart: queue free spaces: 16[0m
+[0;32mI (28957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (29157) uart: queue free spaces: 16[0m
+[0;32mI (29157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (29357) uart: queue free spaces: 16[0m
+[0;32mI (29357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (29557) uart: queue free spaces: 16[0m
+[0;32mI (29557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (29757) uart: queue free spaces: 16[0m
+[0;32mI (29757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (29957) uart: queue free spaces: 16[0m
+[0;32mI (29957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (30157) uart: queue free spaces: 16[0m
+[0;32mI (30157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (30357) uart: queue free spaces: 16[0m
+[0;32mI (30357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (30557) uart: queue free spaces: 16[0m
+[0;32mI (30557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (30757) uart: queue free spaces: 16[0m
+[0;32mI (30757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (30957) uart: queue free spaces: 16[0m
+[0;32mI (30957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (31157) uart: queue free spaces: 16[0m
+[0;32mI (31157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (31357) uart: queue free spaces: 16[0m
+[0;32mI (31357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (31557) uart: queue free spaces: 16[0m
+[0;32mI (31557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (31757) uart: queue free spaces: 16[0m
+[0;32mI (31757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (31957) uart: queue free spaces: 16[0m
+[0;32mI (31957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (32157) uart: queue free spaces: 16[0m
+[0;32mI (32157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (32177) gps_demo: Unknown statement:,,,0,00,99.99,,,,,,*65
+[0m
+[0;32mI (32357) uart: queue free spaces: 16[0m
+[0;32mI (32357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (32557) uart: queue free spaces: 16[0m
+[0;32mI (32557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (32757) uart: queue free spaces: 16[0m
+[0;32mI (32757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (32957) uart: queue free spaces: 16[0m
+[0;32mI (32957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (33157) uart: queue free spaces: 16[0m
+[0;32mI (33157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (33357) uart: queue free spaces: 16[0m
+[0;32mI (33357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (33557) uart: queue free spaces: 16[0m
+[0;32mI (33557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (33757) uart: queue free spaces: 16[0m
+[0;32mI (33757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (33957) uart: queue free spaces: 16[0m
+[0;32mI (33957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (34157) uart: queue free spaces: 16[0m
+[0;33mW (34157) nmea_parser: Rx Break[0m
+[0;32mI (34157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (34357) uart: queue free spaces: 16[0m
+[0;32mI (34357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (34557) uart: queue free spaces: 16[0m
+[0;32mI (34557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (34757) uart: queue free spaces: 16[0m
+[0;32mI (34757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (34957) uart: queue free spaces: 16[0m
+[0;32mI (34957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (35157) uart: queue free spaces: 16[0m
+[0;33mW (35157) nmea_parser: Rx Break[0m
+[0;32mI (35157) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (35207) gps_demo: Unknown statement:,,,0,00,99.99,,,,,,*66
+[0m
+[0;32mI (35357) uart: queue free spaces: 16[0m
+[0;32mI (35357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (35557) uart: queue free spaces: 16[0m
+[0;32mI (35557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (35757) uart: queue free spaces: 16[0m
+[0;32mI (35757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (35957) uart: queue free spaces: 16[0m
+[0;32mI (35957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (36157) uart: queue free spaces: 16[0m
+[0;32mI (36157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (36357) uart: queue free spaces: 16[0m
+[0;32mI (36357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (36557) uart: queue free spaces: 16[0m
+[0;32mI (36557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (36757) uart: queue free spaces: 16[0m
+[0;32mI (36757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (36957) uart: queue free spaces: 16[0m
+[0;32mI (36957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (37157) uart: queue free spaces: 16[0m
+[0;32mI (37157) nmea_parser: NMEA Parser init OK[0m
+[0;

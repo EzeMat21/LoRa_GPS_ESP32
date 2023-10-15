@@ -1,0 +1,2610 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0af28h ( 44840) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001af50 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001d0b0 vaddr=40080000 size=02f68h ( 12136) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19438h (103480) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=00039460 vaddr=40082f68 size=0a194h ( 41364) load[0m
+[0;32mI (196) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (196) boot: Disabling RNG early entropy source...[0m
+[0;32mI (208) cpu_start: Multicore app[0m
+[0;32mI (208) cpu_start: Pro cpu up.[0m
+[0;32mI (208) cpu_start: Starting app cpu, entry point is 0x400811e4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (226) cpu_start: Pro cpu start user code[0m
+[0;32mI (226) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (226) cpu_start: Application information:[0m
+[0;32mI (231) cpu_start: Project name:     nmea_parser[0m
+[0;32mI (236) cpu_start: App version:      1[0m
+[0;32mI (240) cpu_start: Compile time:     Oct 15 2023 03:01:35[0m
+[0;32mI (246) cpu_start: ELF file SHA256:  aaf86b507a164253...[0m
+[0;32mI (252) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (257) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (262) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (267) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (272) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (279) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (285) heap_init: At 3FFB29C8 len 0002D638 (181 KiB): DRAM[0m
+[0;32mI (291) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (297) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (304) heap_init: At 4008D0FC len 00012F04 (75 KiB): IRAM[0m
+[0;32mI (312) spi_flash: detected chip: gd[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (332) app_start: Starting scheduler on CPU0[0m
+[0;32mI (336) app_start: Starting scheduler on CPU1[0m
+[0;32mI (336) main_task: Started on CPU0[0m
+[0;32mI (346) main_task: Calling app_main()[0m
+[0;32mI (346) uart: queue free spaces: 16[0m
+[0;32mI (346) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (356) main_task: Returned from app_main()[0m
+[0;32mI (926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (1976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (2926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (3976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (4926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (5976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (6926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (7976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (8926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (9976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (10926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (11976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (12926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (13976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (14926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (15976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (16926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (17976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (18926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (19976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (20926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (21976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (22926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (23976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (24926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (25976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (26926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (27976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (28926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (30076) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (31036) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (32036) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (32926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (33976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (34926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (35976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (36926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (37976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (38926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (39976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (40926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (41976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (42926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (43976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (44926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (45976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (46926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (47976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (48926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (49976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (50926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (51976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (52926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (53976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (55076) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (56026) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (57026) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (58026) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (59026) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (59926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (60976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (61926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (62976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (63926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (64976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (65926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (66976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (67926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (68976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (69926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (70976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (71926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (72976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (73926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (74976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (75926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (76976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (77926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (78976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (79926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (80976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (81926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (82976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (83926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (84976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (85926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (86976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (87926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (88976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (89926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (90976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (91926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (92976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (93926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (94976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (95926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (96976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (97926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (98976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (99926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (100976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (101926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (102976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (103926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (104976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (105926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (106976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (107926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (108976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (109926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (110976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (111926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (112976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (113926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (114976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (115926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (116976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (117926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (119026) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (119976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (120976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (121976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (122926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (123976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (124926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (125976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (126926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (127976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (128926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (129976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (130926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (131976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (132926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (133976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (134926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (135976) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (136926) gps_demo: 2053/98/240 52:87:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (137746) gps_demo: 2029/26/240 16:26:29 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (138796) gps_demo: 2030/26/240 16:26:30 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (139746) gps_demo: 2031/26/240 16:26:31 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (140796) gps_demo: 2032/26/240 16:26:32 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (141896) gps_demo: 2033/26/240 16:26:33 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (142746) gps_demo: 2034/26/240 16:26:34 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (143796) gps_demo: 2035/26/240 16:26:35 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (144746) gps_demo: 2036/26/240 16:26:36 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (145796) gps_demo: 2037/26/240 16:26:37 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (146746) gps_demo: 2038/26/240 16:26:38 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (147906) gps_demo: 2039/26/240 16:26:39 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (148736) gps_demo: 2040/26/240 16:26:40 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (149786) gps_demo: 2041/26/240 16:26:41 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (150736) gps_demo: 2042/26/240 16:26:42 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (151786) gps_demo: 2043/26/240 16:26:43 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (152736) gps_demo: 2044/26/240 16:26:44 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (153896) gps_demo: 2045/26/240 16:26:45 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (154736) gps_demo: 2046/26/240 16:26:46 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (155786) gps_demo: 2047/26/240 16:26:47 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (156736) gps_demo: 2048/26/240 16:26:48 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (157786) gps_demo: 2049/26/240 16:26:49 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (158736) gps_demo: 2050/26/240 16:26:50 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (159896) gps_demo: 2051/26/240 16:26:51 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (160736) gps_demo: 2052/26/240 16:26:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (161786) gps_demo: 2053/26/240 16:26:53 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (162736) gps_demo: 2054/26/240 16:26:54 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (163786) gps_demo: 2055/26/240 16:26:55 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (164736) gps_demo: 2056/26/240 16:26:56 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (165906) gps_demo: 2057/26/240 16:26:57 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (166746) gps_demo: 2058/26/240 16:26:58 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (167736) gps_demo: 2059/26/240 16:26:59 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (168786) gps_demo: 2000/27/240 16:27:0 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (169736) gps_demo: 2001/27/240 16:27:1 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (170786) gps_demo: 2002/27/240 16:27:2 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (171896) gps_demo: 2003/27/240 16:27:3 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (172736) gps_demo: 2004/27/240 16:27:4 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (173786) gps_demo: 2005/27/240 16:27:5 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (174736) gps_demo: 2006/27/240 16:27:6 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (175786) gps_demo: 2007/27/240 16:27:7 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (176736) gps_demo: 2008/27/240 16:27:8 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (177896) gps_demo: 2009/27/240 16:27:9 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (178736) gps_demo: 2010/27/240 16:27:10 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (179786) gps_demo: 2011/27/240 16:27:11 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (180736) gps_demo: 2012/27/240 16:27:12 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (181786) gps_demo: 2013/27/240 16:27:13 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (182736) gps_demo: 2014/27/240 16:27:14 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (183896) gps_demo: 2015/27/240 16:27:15 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (184736) gps_demo: 2016/27/240 16:27:16 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (185786) gps_demo: 2017/27/240 16:27:17 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (186736) gps_demo: 2018/27/240 16:27:18 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (187786) gps_demo: 2019/27/240 16:27:19 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (188736) gps_demo: 2020/27/240 16:27:20 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (189896) gps_demo: 2021/27/240 16:27:21 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (190736) gps_demo: 2022/27/240 16:27:22 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (191786) gps_demo: 2023/27/240 16:27:23 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (192736) gps_demo: 2024/27/240 16:27:24 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (193786) gps_demo: 2025/27/240 16:27:25 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (194736) gps_demo: 2026/27/240 16:27:26 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (195896) gps_demo: 2027/27/240 16:27:27 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (196736) gps_demo: 2028/27/240 16:27:28 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (197786) gps_demo: 2029/27/240 16:27:29 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (198736) gps_demo: 2030/27/240 16:27:30 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (199786) gps_demo: 2031/27/240 16:27:31 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (200736) gps_demo: 2032/27/240 16:27:32 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (201886) gps_demo: 2033/27/240 16:27:33 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (202736) gps_demo: 2034/27/240 16:27:34 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (203786) gps_demo: 2035/27/240 16:27:35 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (204736) gps_demo: 2036/27/240 16:27:36 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (205786) gps_demo: 2037/27/240 16:27:37 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (206736) gps_demo: 2038/27/240 16:27:38 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (207896) gps_demo: 2039/27/240 16:27:39 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (208736) gps_demo: 2040/27/240 16:27:40 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (209786) gps_demo: 2041/27/240 16:27:41 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (210736) gps_demo: 2042/27/240 16:27:42 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (211786) gps_demo: 2043/27/240 16:27:43 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (212736) gps_demo: 2044/27/240 16:27:44 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (213896) gps_demo: 2045/27/240 16:27:45 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (214736) gps_demo: 2046/27/240 16:27:46 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (215786) gps_demo: 2047/27/240 16:27:47 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (216736) gps_demo: 2048/27/240 16:27:48 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (217786) gps_demo: 2049/27/240 16:27:49 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (218746) gps_demo: 2050/27/240 16:27:50 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (219896) gps_demo: 2051/27/240 16:27:51 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (220736) gps_demo: 2052/27/240 16:27:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (221786) gps_demo: 2053/27/240 16:27:53 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (222736) gps_demo: 2054/27/240 16:27:54 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (223786) gps_demo: 2055/27/240 16:27:55 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (224736) gps_demo: 2056/27/240 16:27:56 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (225896) gps_demo: 2057/27/240 16:27:57 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (226736) gps_demo: 2058/27/240 16:27:58 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (227786) gps_demo: 2059/27/240 16:27:59 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (228736) gps_demo: 2000/28/240 16:28:0 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (229786) gps_demo: 2001/28/240 16:28:1 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (230736) gps_demo: 2002/28/240 16:28:2 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (231896) gps_demo: 2003/28/240 16:28:3 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (232746) gps_demo: 2004/28/240 16:28:4 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (233796) gps_demo: 2005/28/240 16:28:5 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (234736) gps_demo: 2006/28/240 16:28:6 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (235786) gps_demo: 2007/28/240 16:28:7 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (236736) gps_demo: 2008/28/240 16:28:8 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (237896) gps_demo: 2009/28/240 16:28:9 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (238736) gps_demo: 2010/28/240 16:28:10 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (239786) gps_demo: 2011/28/240 16:28:11 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (240736) gps_demo: 2012/28/240 16:28:12 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (241786) gps_demo: 2013/28/240 16:28:13 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (242746) gps_demo: 2014/28/240 16:28:14 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (243896) gps_demo: 2015/28/240 16:28:15 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (244736) gps_demo: 2016/28/240 16:28:16 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (245786) gps_demo: 2017/28/240 16:28:17 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (246736) gps_demo: 2018/28/240 16:28:18 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (247786) gps_demo: 2019/28/240 16:28:19 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (248736) gps_demo: 2020/28/240 16:28:20 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (249896) gps_demo: 2021/28/240 16:28:21 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (250736) gps_demo: 2022/28/240 16:28:22 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (251786) gps_demo: 2023/28/240 16:28:23 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (252736) gps_demo: 2024/28/240 16:28:24 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (253786) gps_demo: 2025/28/240 16:28:25 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (254736) gps_demo: 2026/28/240 16:28:26 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (255896) gps_demo: 2027/28/240 16:28:27 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (256736) gps_demo: 2028/28/240 16:28:28 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (257786) gps_demo: 2029/28/240 16:28:29 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (258736) gps_demo: 2030/28/240 16:28:30 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (259786) gps_demo: 2031/28/240 16:28:31 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (260736) gps_demo: 2032/28/240 16:28:32 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (261906) gps_demo: 2033/28/240 16:28:33 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (262736) gps_demo: 2034/28/240 16:28:34 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (263786) gps_demo: 2035/28/240 16:28:35 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (264736) gps_demo: 2036/28/240 16:28:36 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (265786) gps_demo: 2037/28/240 16:28:37 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (266736) gps_demo: 2038/28/240 16:28:38 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (267896) gps_demo: 2039/28/240 16:28:39 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (268736) gps_demo: 2040/28/240 16:28:40 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (269786) gps_demo: 2041/28/240 16:28:41 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (270736) gps_demo: 2042/28/240 16:28:42 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (271786) gps_demo: 2043/28/240 16:28:43 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (272736) gps_demo: 2044/28/240 16:28:44 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (273896) gps_demo: 2045/28/240 16:28:45 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (274736) gps_demo: 2046/28/240 16:28:46 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (275786) gps_demo: 2047/28/240 16:28:47 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (276736) gps_demo: 2048/28/240 16:28:48 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (277786) gps_demo: 2049/28/240 16:28:49 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (278736) gps_demo: 2050/28/240 16:28:50 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (279896) gps_demo: 2051/28/240 16:28:51 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (280736) gps_demo: 2052/28/240 16:28:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (281786) gps_demo: 2053/28/240 16:28:53 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (282736) gps_demo: 2054/28/240 16:28:54 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (283786) gps_demo: 2055/28/240 16:28:55 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (284736) gps_demo: 2056/28/240 16:28:56 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (285896) gps_demo: 2057/28/240 16:28:57 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (286736) gps_demo: 2058/28/240 16:28:58 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (287786) gps_demo: 2059/28/240 16:28:59 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (288736) gps_demo: 2000/29/240 16:29:0 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (289786) gps_demo: 2001/29/240 16:29:1 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (290736) gps_demo: 2002/29/240 16:29:2 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (291896) gps_demo: 2003/29/240 16:29:3 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (292736) gps_demo: 2004/29/240 16:29:4 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (293786) gps_demo: 2005/29/240 16:29:5 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (294736) gps_demo: 2006/29/240 16:29:6 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (295786) gps_demo: 2007/29/240 16:29:7 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (296736) gps_demo: 2008/29/240 16:29:8 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (297896) gps_demo: 2009/29/240 16:29:9 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (298786) gps_demo: 2010/29/240 16:29:10 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (299786) gps_demo: 2011/29/240 16:29:11 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (300786) gps_demo: 2012/29/240 16:29:12 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (301736) gps_demo: 2013/29/240 16:29:13 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (302786) gps_demo: 2014/29/240 16:29:14 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (303896) gps_demo: 2015/29/240 16:29:15 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (304736) gps_demo: 2016/29/240 16:29:16 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (305786) gps_demo: 2017/29/240 16:29:17 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (306736) gps_demo: 2018/29/240 16:29:18 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (307786) gps_demo: 2019/29/240 16:29:19 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (308736) gps_demo: 2020/29/240 16:29:20 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (309896) gps_demo: 2021/29/240 16:29:21 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (310736) gps_demo: 2022/29/240 16:29:22 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (311786) gps_demo: 2023/29/240 16:29:23 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (312736) gps_demo: 2024/29/240 16:29:24 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (313786) gps_demo: 2025/29/240 16:29:25 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (314736) gps_demo: 2026/29/240 16:29:26 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (315896) gps_demo: 2027/29/240 16:29:27 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (316736) gps_demo: 2028/29/240 16:29:28 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (317786) gps_demo: 2029/29/240 16:29:29 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (318736) gps_demo: 2030/29/240 16:29:30 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (319786) gps_demo: 2031/29/240 16:29:31 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (320736) gps_demo: 2032/29/240 16:29:32 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (321896) gps_demo: 2033/29/240 16:29:33 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (322736) gps_demo: 2034/29/240 16:29:34 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (323786) gps_demo: 2035/29/240 16:29:35 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (324736) gps_demo: 2036/29/240 16:29:36 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (325786) gps_demo: 2037/29/240 16:29:37 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (326736) gps_demo: 2038/29/240 16:29:38 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (327896) gps_demo: 2039/29/240 16:29:39 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (328736) gps_demo: 2040/29/240 16:29:40 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (329786) gps_demo: 2041/29/240 16:29:41 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (330736) gps_demo: 2042/29/240 16:29:42 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (331786) gps_demo: 2043/29/240 16:29:43 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (332736) gps_demo: 2044/29/240 16:29:44 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (333896) gps_demo: 2045/29/240 16:29:45 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (334736) gps_demo: 2046/29/240 16:29:46 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (335786) gps_demo: 2047/29/240 16:29:47 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (336736) gps_demo: 2048/29/240 16:29:48 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (337786) gps_demo: 2049/29/240 16:29:49 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (338736) gps_demo: 2050/29/240 16:29:50 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (339896) gps_demo: 2051/29/240 16:29:51 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (340736) gps_demo: 2052/29/240 16:29:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (341786) gps_demo: 2053/29/240 16:29:53 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (342736) gps_demo: 2054/29/240 16:29:54 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (343786) gps_demo: 2055/29/240 16:29:55 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (344736) gps_demo: 2056/29/240 16:29:56 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (345886) gps_demo: 2057/29/240 16:29:57 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (346736) gps_demo: 2058/29/240 16:29:58 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (347786) gps_demo: 2059/29/240 16:29:59 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (348736) gps_demo: 2000/30/240 16:30:0 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (349786) gps_demo: 2001/30/240 16:30:1 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (350736) gps_demo: 2002/30/240 16:30:2 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (351896) gps_demo: 2003/30/240 16:30:3 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (352736) gps_demo: 2004/30/240 16:30:4 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (353786) gps_demo: 2005/30/240 16:30:5 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (354736) gps_demo: 2006/30/240 16:30:6 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (355786) gps_demo: 2007/30/240 16:30:7 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (356736) gps_demo: 2008/30/240 16:30:8 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (357896) gps_demo: 2009/30/240 16:30:9 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (358736) gps_demo: 2010/30/240 16:30:10 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (359786) gps_demo: 2011/30/240 16:30:11 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (360736) gps_demo: 2012/30/240 16:30:12 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (361786) gps_demo: 2013/30/240 16:30:13 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (362736) gps_demo: 2014/30/240 16:30:14 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (363886) gps_demo: 2015/30/240 16:30:15 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (364736) gps_demo: 2016/30/240 16:30:16 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (365786) gps_demo: 2017/30/240 16:30:17 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (366736) gps_demo: 2018/30/240 16:30:18 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (367786) gps_demo: 2019/30/240 16:30:19 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (368736) gps_demo: 2020/30/240 16:30:20 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (369886) gps_demo: 2021/30/240 16:30:21 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (370736) gps_demo: 2022/30/240 16:30:22 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (371786) gps_demo: 2023/30/240 16:30:23 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (372736) gps_demo: 2024/30/240 16:30:24 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (373786) gps_demo: 2025/30/240 16:30:25 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (374736) gps_demo: 2026/30/240 16:30:26 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (375896) gps_demo: 2027/30/240 16:30:27 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (376736) gps_demo: 2028/30/240 16:30:28 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (377786) gps_demo: 2029/30/240 16:30:29 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (378736) gps_demo: 2030/30/240 16:30:30 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (379786) gps_demo: 2031/30/240 16:30:31 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (380736) gps_demo: 2032/30/240 16:30:32 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (381886) gps_demo: 2033/30/240 16:30:33 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (382736) gps_demo: 2034/30/240 16:30:34 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (383786) gps_demo: 2035/30/240 16:30:35 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (384736) gps_demo: 2036/30/240 16:30:36 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (385786) gps_demo: 2037/30/240 16:30:37 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (386736) gps_demo: 2038/30/240 16:30:38 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (387896) gps_demo: 2039/30/240 16:30:39 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (388736) gps_demo: 2040/30/240 16:30:40 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (389786) gps_demo: 2041/30/240 16:30:41 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (390736) gps_demo: 2042/30/240 16:30:42 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (391786) gps_demo: 2043/30/240 16:30:43 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (392736) gps_demo: 2044/30/240 16:30:44 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (393896) gps_demo: 2045/30/240 16:30:45 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (394736) gps_demo: 2046/30/240 16:30:46 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (395786) gps_demo: 2047/30/240 16:30:47 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (396736) gps_demo: 2048/30/240 16:30:48 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (397786) gps_demo: 2049/30/240 16:30:49 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (398736) gps_demo: 2050/30/240 16:30:50 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (399896) gps_demo: 2051/30/240 16:30:51 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (400736) gps_demo: 2052/30/240 16:30:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (401786) gps_demo: 2053/30/240 16:30:53 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (402736) gps_demo: 2054/30/240 16:30:54 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (403786) gps_demo: 2055/30/240 16:30:55 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (404736) gps_demo: 2056/30/240 16:30:56 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (405896) gps_demo: 2057/30/240 16:30:57 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (406736) gps_demo: 2058/30/240 16:30:58 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (407786) gps_demo: 2059/30/240 16:30:59 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (408736) gps_demo: 2000/31/240 16:31:0 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (409786) gps_demo: 2001/31/240 16:31:1 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (410736) gps_demo: 2002/31/240 16:31:2 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (411886) gps_demo: 2003/31/240 16:31:3 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (412736) gps_demo: 2004/31/240 16:31:4 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (413786) gps_demo: 2005/31/240 16:31:5 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (414736) gps_demo: 2006/31/240 16:31:6 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (415786) gps_demo: 2007/31/240 16:31:7 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (416736) gps_demo: 2008/31/240 16:31:8 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (417886) gps_demo: 2009/31/240 16:31:9 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (418736) gps_demo: 2010/31/240 16:31:10 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (419786) gps_demo: 2011/31/240 16:31:11 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (420736) gps_demo: 2012/31/240 16:31:12 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (421786) gps_demo: 2013/31/240 16:31:13 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (422736) gps_demo: 2014/31/240 16:31:14 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (423886) gps_demo: 2015/31/240 16:31:15 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (424736) gps_demo: 2016/31/240 16:31:16 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (425786) gps_demo: 2017/31/240 16:31:17 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (426736) gps_demo: 2018/31/240 16:31:18 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (427786) gps_demo: 2019/31/240 16:31:19 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (428736) gps_demo: 2020/31/240 16:31:20 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (429896) gps_demo: 2021/31/240 16:31:21 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (430736) gps_demo: 2022/31/240 16:31:22 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (431786) gps_demo: 2023/31/240 16:31:23 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (432736) gps_demo: 2024/31/240 16:31:24 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (433786) gps_demo: 2025/31/240 16:31:25 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (434736) gps_demo: 2026/31/240 16:31:26 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (435896) gps_demo: 2027/31/240 16:31:27 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (436736) gps_demo: 2028/31/240 16:31:28 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (437786) gps_demo: 2029/31/240 16:31:29 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (438736) gps_demo: 2030/31/240 16:31:30 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (439786) gps_demo: 2031/31/240 16:31:31 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (440736) gps_demo: 2032/31/240 16:31:32 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (441906) gps_demo: 2033/31/240 16:31:33 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (442736) gps_demo: 2034/31/240 16:31:34 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (443786) gps_demo: 2035/31/240 16:31:35 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (444736) gps_demo: 2036/31/240 16:31:36 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (445786) gps_demo: 2037/31/240 16:31:37 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (446736) gps_demo: 2038/31/240 16:31:38 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (447896) gps_demo: 2039/31/240 16:31:39 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (448736) gps_demo: 2040/31/240 16:31:40 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (449786) gps_demo: 2041/31/240 16:31:41 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (450736) gps_demo: 2042/31/240 16:31:42 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (451786) gps_demo: 2043/31/240 16:31:43 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (452786) gps_demo: 2044/31/240 16:31:44 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (453946) gps_demo: 2045/31/240 16:31:45 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (454746) gps_demo: 2046/31/240 16:31:46 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (455736) gps_demo: 2047/31/240 16:31:47 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (456786) gps_demo: 2048/31/240 16:31:48 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (457736) gps_demo: 2049/31/240 16:31:49 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (458786) gps_demo: 2050/31/240 16:31:50 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (459896) gps_demo: 2051/31/240 16:31:51 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (460736) gps_demo: 2052/31/240 16:31:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (461786) gps_demo: 2053/31/240 16:31:53 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (462736) gps_demo: 2054/31/240 16:31:54 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (463786) gps_demo: 2055/31/240 16:31:55 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (464736) gps_demo: 2056/31/240 16:31:56 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (465886) gps_demo: 2057/31/240 16:31:57 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (466736) gps_demo: 2058/31/240 16:31:58 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (467786) gps_demo: 2059/31/240 16:31:59 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (468736) gps_demo: 2000/32/240 16:32:0 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (469786) gps_demo: 2001/32/240 16:32:1 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (470736) gps_demo: 2002/32/240 16:32:2 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (471886) gps_demo: 2003/32/240 16:32:3 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (472736) gps_demo: 2004/32/240 16:32:4 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (473786) gps_demo: 2005/32/240 16:32:5 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (474736) gps_demo: 2006/32/240 16:32:6 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (475786) gps_demo: 2007/32/240 16:32:7 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (476736) gps_demo: 2008/32/240 16:32:8 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (477896) gps_demo: 2009/32/240 16:32:9 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (478736) gps_demo: 2010/32/240 16:32:10 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (479786) gps_demo: 2011/32/240 16:32:11 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (480736) gps_demo: 2012/32/240 16:32:12 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (481786) gps_demo: 2013/32/240 16:32:13 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (482736) gps_demo: 2014/32/240 16:32:14 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (483896) gps_demo: 2015/32/240 16:32:15 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (484736) gps_demo: 2016/32/240 16:32:16 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (485786) gps_demo: 2017/32/240 16:32:17 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (486736) gps_demo: 2018/32/240 16:32:18 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (487786) gps_demo: 2019/32/240 16:32:19 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (488736) gps_demo: 2020/32/240 16:32:20 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (489886) gps_demo: 2021/32/240 16:32:21 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (490736) gps_demo: 2022/32/240 16:32:22 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (491786) gps_demo: 2023/32/240 16:32:23 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (492736) gps_demo: 2024/32/240 16:32:24 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (493786) gps_demo: 2025/32/240 16:32:25 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (494736) gps_demo: 2026/32/240 16:32:26 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (495906) gps_demo: 2027/32/240 16:32:27 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (496736) gps_demo: 2028/32/240 16:32:28 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (497786) gps_demo: 2029/32/240 16:32:29 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (498736) gps_demo: 2030/32/240 16:32:30 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (499786) gps_demo: 2031/32/240 16:32:31 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (500736) gps_demo: 2032/32/240 16:32:32 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (501996) gps_demo: 2033/32/240 16:32:33 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (502836) gps_demo: 2034/32/240 16:32:34 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (503736) gps_demo: 2035/32/240 16:32:35 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (504786) gps_demo: 2036/32/240 16:32:36 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (505736) gps_demo: 2037/32/240 16:32:37 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (506786) gps_demo: 2038/32/240 16:32:38 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (507896) gps_demo: 2039/32/240 16:32:39 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32mI (508736) gps_demo: 2040/32/240 16:32:40 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+[0;32m

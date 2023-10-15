@@ -1,0 +1,337 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0afb8h ( 44984) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001afe0 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001d140 vaddr=40080000 size=02ed8h ( 11992) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=196f4h (104180) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=0003971c vaddr=40082ed8 size=0a224h ( 41508) load[0m
+[0;32mI (196) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (196) boot: Disabling RNG early entropy source...[0m
+[0;32mI (208) cpu_start: Multicore app[0m
+[0;32mI (208) cpu_start: Pro cpu up.[0m
+[0;32mI (208) cpu_start: Starting app cpu, entry point is 0x400811e4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (226) cpu_start: Pro cpu start user code[0m
+[0;32mI (226) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (226) cpu_start: Application information:[0m
+[0;32mI (231) cpu_start: Project name:     nmea_parser[0m
+[0;32mI (236) cpu_start: App version:      1[0m
+[0;32mI (241) cpu_start: Compile time:     Oct 15 2023 03:01:35[0m
+[0;32mI (247) cpu_start: ELF file SHA256:  51e919e8a83d5d9e...[0m
+[0;32mI (253) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (258) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (262) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (267) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (272) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (279) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (285) heap_init: At 3FFB29C8 len 0002D638 (181 KiB): DRAM[0m
+[0;32mI (291) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (298) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (304) heap_init: At 4008D0FC len 00012F04 (75 KiB): IRAM[0m
+[0;32mI (312) spi_flash: detected chip: gd[0m
+[0;32mI (315) spi_flash: flash io: dio[0m
+[0;33mW (319) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (332) app_start: Starting scheduler on CPU0[0m
+[0;32mI (337) app_start: Starting scheduler on CPU1[0m
+[0;32mI (337) main_task: Started on CPU0[0m
+[0;32mI (347) main_task: Calling app_main()[0m
+[0;32mI (347) uart: queue free spaces: 16[0m
+[0;32mI (347) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (987) gps_demo: 2023/10/15 17:56:13 => 
+						latitude   = -3497868°S
+						longitude = -5807995°W
+						altitude   = 36.80m
+						speed      = 1.103056m/s[0m
+1073424860
+1073424860
+[0;32mI (11757) uart: queue free spaces: 16[0m
+[0;32mI (11757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (12737) gps_demo: 2023/10/15 17:56:25 => 
+						latitude   = -3497864°S
+						longitude = -5807985°W
+						altitude   = 36.40m
+						speed      = 0.883889m/s[0m
+1073424860
+1073424860
+[0;32mI (23157) uart: queue free spaces: 16[0m
+[0;32mI (23157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (23987) gps_demo: 2023/10/15 17:56:36 => 
+						latitude   = -3497866°S
+						longitude = -5807987°W
+						altitude   = 36.40m
+						speed      = 0.390278m/s[0m
+1073424860
+1073424860
+[0;32mI (34557) uart: queue free spaces: 16[0m
+[0;33mW (34557) nmea_parser: Rx Break[0m
+[0;32mI (34557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (34607) gps_demo: Unknown statement:��0.908,,151023,,,A*78
+[0m
+[0;32mI (35567) gps_demo: 2023/10/15 17:56:48 => 
+						latitude   = -3497866°S
+						longitude = -5807988°W
+						altitude   = 35.60m
+						speed      = 0.916740m/s[0m
+1073424860
+1073424860
+[0;32mI (45957) uart: queue free spaces: 16[0m
+[0;32mI (45957) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (45997) gps_demo: Unknown statement:��b��05804.79427,W,205658.00,A,A*6B
+[0m
+[0;32mI (46987) gps_demo: 2023/10/15 17:56:59 => 
+						latitude   = -3497863°S
+						longitude = -5807990°W
+						altitude   = 34.10m
+						speed      = 0.564444m/s[0m
+1073424860
+1073424860
+[0;32mI (57357) uart: queue free spaces: 16[0m
+[0;32mI (57357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (57987) gps_demo: 2023/10/15 17:57:10 => 
+						latitude   = -3497856°S
+						longitude = -5807990°W
+						altitude   = 29.50m
+						speed      = 0.456944m/s[0m
+1073424860
+1073424860
+[0;32mI (68757) uart: queue free spaces: 16[0m
+[0;32mI (68757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (68817) gps_demo: Unknown statement:3,1,11,02,02,258,,08,25,224,32,10,86,180,31,15,09,139,26*78
+[0m
+[0;32mI (69747) gps_demo: 2023/10/15 17:57:22 => 
+						latitude   = -3497852°S
+						longitude = -5807995°W
+						altitude   = 28.60m
+						speed      = 0.208889m/s[0m
+1073424860
+1073424860
+[0;32mI (80157) uart: queue free spaces: 16[0m
+[0;32mI (80157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (80997) gps_demo: 2023/10/15 17:57:33 => 
+						latitude   = -3497852°S
+						longitude = -5808000°W
+						altitude   = 30.30m
+						speed      = 0.328611m/s[0m
+1073424860
+1073424860
+[0;32mI (91557) uart: queue free spaces: 16[0m
+[0;33mW (91557) nmea_parser: Rx Break[0m
+[0;32mI (91557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (91657) gps_demo: Unknown statement:�77
+[0m
+[0;32mI (92577) gps_demo: 2023/10/15 17:57:45 => 
+						latitude   = -3497852°S
+						longitude = -5808008°W
+						altitude   = 33.90m
+						speed      = 1.059344m/s[0m
+1073424860
+1073424860
+[0;32mI (102957) uart: queue free spaces: 16[0m
+[0;32mI (102957) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (102997) gps_demo: Unknown statement:�Mr�����b��05804.80672,W,205755.00,A,A*6F
+[0m
+[0;32mI (103997) gps_demo: 2023/10/15 17:57:56 => 
+						latitude   = -3497855°S
+						longitude = -5808011°W
+						altitude   = 38.70m
+						speed      = 0.008889m/s[0m
+1073424860
+1073424860
+[0;32mI (114357) uart: queue free spaces: 16[0m
+[0;32mI (114357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (114997) gps_demo: 2023/10/15 17:58:7 => 
+						latitude   = -3497857°S
+						longitude = -5808010°W
+						altitude   = 39.60m
+						speed      = 0.291944m/s[0m
+1073424860
+1073424860
+[0;32mI (125757) uart: queue free spaces: 16[0m
+[0;32mI (125757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (125827) gps_demo: Unknown statement:@PGSV,3,1,11,02,02,258,18,08,25,224,32,10,86,177,30,15,09,140,23*73
+[0m
+[0;32mI (126757) gps_demo: 2023/10/15 17:58:19 => 
+						latitude   = -3497855°S
+						longitude = -5808008°W
+						altitude   = 37.50m
+						speed      = 0.168611m/s[0m
+1073424860
+1073424860
+[0;32mI (137157) uart: queue free spaces: 16[0m
+[0;32mI (137157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (138007) gps_demo: 2023/10/15 17:58:30 => 
+						latitude   = -3497860°S
+						longitude = -5808004°W
+						altitude   = 38.40m
+						speed      = 0.512500m/s[0m
+1073424860
+1073424860
+[0;32mI (148557) uart: queue free spaces: 16[0m
+[0;32mI (148557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (148577) gps_demo: Unknown statement:��b��0.396,,151023,,,A*70
+[0m
+[0;32mI (149577) gps_demo: 2023/10/15 17:58:42 => 
+						latitude   = -3497864°S
+						longitude = -5808003°W
+						altitude   = 40.60m
+						speed      = 0.648200m/s[0m
+1073424860
+1073424860
+[0;32mI (159957) uart: queue free spaces: 16[0m
+[0;33mW (159957) nmea_parser: Rx Break[0m
+[0;32mI (159957) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (160007) gps_demo: Unknown statement:�3458.71809,S,05804.80303,W,205852.00,A,A*62
+[0m
+[0;32mI (161007) gps_demo: 2023/10/15 17:58:53 => 
+						latitude   = -3497862°S
+						longitude = -5808007°W
+						altitude   = 41.50m
+						speed      = 0.798056m/s[0m
+1073424860
+1073424860
+[0;32mI (171357) uart: queue free spaces: 16[0m
+[0;32mI (171357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (171997) gps_demo: 2023/10/15 17:59:4 => 
+						latitude   = -3497862°S
+						longitude = -5808007°W
+						altitude   = 41.20m
+						speed      = 0.306667m/s[0m
+1073424860
+1073424860
+[0;32mI (182757) uart: queue free spaces: 16[0m
+[0;33mW (182757) nmea_parser: Rx Break[0m
+[0;32mI (182757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (183747) gps_demo: 2023/10/15 17:59:16 => 
+						latitude   = -3497863°S
+						longitude = -5808008°W
+						altitude   = 41.50m
+						speed      = 0.532778m/s[0m
+1073424860
+1073424860
+[0;32mI (194157) uart: queue free spaces: 16[0m
+[0;32mI (194157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (194987) gps_demo: 2023/10/15 17:59:27 => 
+						latitude   = -3497872°S
+						longitude = -5808006°W
+						altitude   = 42.50m
+						speed      = 1.415278m/s[0m
+1073424860
+1073424860
+[0;32mI (205557) uart: queue free spaces: 16[0m
+[0;32mI (205557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (206617) gps_demo: 2023/10/15 17:59:39 => 
+						latitude   = -3497869°S
+						longitude = -5808019°W
+						altitude   = 0.00m
+						speed      = 1.009722m/s[0m
+1073424860
+1073424860
+�[0;32mI (13) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (13) boot: comp)�[0;32mI (13) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (13) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (13) boot: Multicore bootloader[0m
+[0;32mI (16) boot: chip revision: v1.0[0m
+[0;32mI (20) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (25) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (29) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (34) boot: Enabling RNG early entropy source...[0m
+[0;32mI (39) boot: Partition Table:[0m
+[0;32mI (43) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (58) boot:  1 phy_init         RF data          01 01 0�[0;32mI (13) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (13) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (13) boot: Multicore bootloader[0m
+[0;32mI (16) boot: chip revision: v1.0[0m
+[0;32mI (20) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (25) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (29) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (34) boot: Enabling RNG early entropy source...[0m
+[0;32mI (39) boot: Partition Table:[0m
+[0;32mI (43) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (58) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (73) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0afb8h ( 44984) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=0001afe0 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001d140 vaddr=40080000 size=02ed8h ( 11992) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=196f4h (104180) map[0m
+[0;32mI (153) esp_image: segment 4: paddr=0003971c vaddr=40082ed8 size=0a224h ( 41508) load[0m
+[0;32mI (177) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (178) boot: Disabling RNG early entropy source...[0m
+[0;32mI (189) cpu_start: Multicore app[0m
+[0;32mI (189) cpu_start: Pro cpu up.[0m
+[0;32mI (189) cpu_start: Starting app cpu, entry point is 0x400811e4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (207) cpu_start: Pro cpu start user code[0m
+[0;32mI (207) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (207) cpu_start: Application information:[0m
+[0;32mI (212) cpu_start: Project name:     nmea_parser[0m
+[0;32mI (217) cpu_start: App version:      1[0m
+[0;32mI (222) cpu_start: Compile time:     Oct 15 2023 03:01:35[0m
+[0;32mI (228) cpu_start: ELF file SHA256:  51e919e8a83d5d9e...[0m
+[0;32mI (234) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (239) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (243) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (248) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (253) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (260) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (266) heap_init: At 3FFB29C8 len 0002D638 (181 KiB): DRAM[0m
+[0;32mI (272) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (279) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (285) heap_init: At 4008D0FC len 00012F04 (75 KiB): IRAM[0m
+[0;32mI (293) spi_flash: detected chip: gd[0m
+[0;32mI (296) spi_flash: flash io: dio[0m
+[0;33mW (300) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (313) app_start: Starting scheduler on CPU0[0m
+[0;32mI (318) app_start: Starting scheduler on CPU1[0m
+[0;32mI (318) main_task: Started on CPU0[0m
+[0;32mI (328) main_task: Calling app_main()[0m
+[0;32mI (328) uart: queue free spaces: 16[0m
+[0;32mI (328) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (358) gps_demo: Unknown statement:��r��b��,,,,,,151023,,,N*7B
+[0m
+��[0;32mI (13) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (13) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (13) boot: Multicore bootloader[0m
+[0;32mI (16) boot: chip revision: v1.0[0m
+[0;32mI (20) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (25) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (29) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (34) boot: Enabling RNG early entropy source...[0m
+[0;32mI (39) boot: Partition Table:[0m
+[0;32mI (43) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (58) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (73) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0afb8h ( 44984) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=0001afe0 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001d140 vaddr=40080000 size=02ed8h ( 11992) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=196f4h (104180) map[0m
+[0;32mI (153) esp_image: segment 4: paddr=0003971c vaddr=40082ed8 size=0a224h ( 41508) load[0m
+[0;32mI (177) boot: 

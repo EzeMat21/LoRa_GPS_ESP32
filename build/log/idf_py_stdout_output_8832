@@ -1,0 +1,211 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0afc0h ( 44992) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001afe8 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001d148 vaddr=40080000 size=02ed0h ( 11984) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19744h (104260) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=0003976c vaddr=40082ed0 size=0a22ch ( 41516) load[0m
+[0;32mI (196) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (196) boot: Disabling RNG early entropy source...[0m
+[0;32mI (208) cpu_start: Multicore app[0m
+[0;32mI (208) cpu_start: Pro cpu up.[0m
+[0;32mI (208) cpu_start: Starting app cpu, entry point is 0x400811e4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (226) cpu_start: Pro cpu start user code[0m
+[0;32mI (226) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (226) cpu_start: Application information:[0m
+[0;32mI (231) cpu_start: Project name:     nmea_parser[0m
+[0;32mI (236) cpu_start: App version:      1[0m
+[0;32mI (241) cpu_start: Compile time:     Oct 15 2023 18:08:44[0m
+[0;32mI (247) cpu_start: ELF file SHA256:  1f2d1fd68591c3cf...[0m
+[0;32mI (253) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (258) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (262) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (267) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (272) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (279) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (285) heap_init: At 3FFB29D0 len 0002D630 (181 KiB): DRAM[0m
+[0;32mI (291) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (298) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (304) heap_init: At 4008D0FC len 00012F04 (75 KiB): IRAM[0m
+[0;32mI (312) spi_flash: detected chip: gd[0m
+[0;32mI (315) spi_flash: flash io: dio[0m
+[0;33mW (319) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (332) app_start: Starting scheduler on CPU0[0m
+[0;32mI (337) app_start: Starting scheduler on CPU1[0m
+[0;32mI (337) main_task: Started on CPU0[0m
+[0;32mI (347) main_task: Calling app_main()[0m
+[0;32mI (347) uart: queue free spaces: 16[0m
+[0;32mI (347) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (1327) gps_demo: 2023/10/15 18:23:8 => 
+						latitude   = 0
+						longitude = 0
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+0
+0
+0.00
+0.000000
+[0;32mI (11757) uart: queue free spaces: 16[0m
+[0;32mI (11757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (12407) gps_demo: 2023/10/15 18:23:19 => 
+						latitude   = 0
+						longitude = 0
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+0
+0
+0.00
+0.000000
+[0;32mI (23157) uart: queue free spaces: 16[0m
+[0;32mI (23157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (24167) gps_demo: 2023/10/15 18:23:31 => 
+						latitude   = -3497865
+						longitude = -5807998
+						altitude   = 44.60m
+						speed      = 0.384722m/s[0m
+-3497865
+-5807998
+44.60
+0.384722
+[0;32mI (34557) uart: queue free spaces: 16[0m
+[0;32mI (34557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (35417) gps_demo: 2023/10/15 18:23:42 => 
+						latitude   = -3497863
+						longitude = -5808000
+						altitude   = 46.30m
+						speed      = 0.478056m/s[0m
+-3497863
+-5808000
+46.30
+0.478056
+[0;32mI (45957) uart: queue free spaces: 16[0m
+[0;33mW (45957) nmea_parser: Rx Break[0m
+[0;32mI (45957) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (46007) gps_demo: Unknown statement:����b��05804.79739,W,0.672,,151023,,,A*79
+[0m
+[0;32mI (46997) gps_demo: 2023/10/15 18:23:54 => 
+						latitude   = -3497862
+						longitude = -5807996
+						altitude   = 42.30m
+						speed      = 0.864884m/s[0m
+-3497862
+-5807996
+42.30
+0.864884
+[0;32mI (57357) uart: queue free spaces: 16[0m
+[0;32mI (57357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (58367) gps_demo: 2023/10/15 18:24:5 => 
+						latitude   = -3497857
+						longitude = -5807997
+						altitude   = 34.50m
+						speed      = 0.847500m/s[0m
+-3497857
+-5807997
+34.50
+0.847500
+[0;32mI (68757) uart: queue free spaces: 16[0m
+[0;32mI (68757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (69427) gps_demo: 2023/10/15 18:24:16 => 
+						latitude   = -3497857
+						longitude = -5807997
+						altitude   = 35.20m
+						speed      = 0.590556m/s[0m
+-3497857
+-5807997
+35.20
+0.590556
+[0;32mI (80157) uart: queue free spaces: 16[0m
+[0;32mI (80157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (81167) gps_demo: 2023/10/15 18:24:28 => 
+						latitude   = -3497859
+						longitude = -5807998
+						altitude   = 41.10m
+						speed      = 0.185833m/s[0m
+-3497859
+-5807998
+41.10
+0.185833
+[0;32mI (91557) uart: queue free spaces: 16[0m
+[0;32mI (91557) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (92417) gps_demo: 2023/10/15 18:24:39 => 
+						latitude   = -3497863
+						longitude = -5807996
+						altitude   = 41.10m
+						speed      = 0.141667m/s[0m
+-3497863
+-5807996
+41.10
+0.141667
+[0;32mI (102957) uart: queue free spaces: 16[0m
+[0;32mI (102957) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (102997) gps_demo: Unknown statement:.71705,S,05804.79810,W,0.465,,151023,,,A*7C
+[0m
+[0;32mI (103997) gps_demo: 2023/10/15 18:24:51 => 
+						latitude   = -3497861
+						longitude = -5807997
+						altitude   = 44.80m
+						speed      = 0.792656m/s[0m
+-3497861
+-5807997
+44.80
+0.792656
+[0;32mI (114357) uart: queue free spaces: 16[0m
+[0;33mW (114357) nmea_parser: Rx Break[0m
+[0;32mI (114357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (115367) gps_demo: 2023/10/15 18:25:2 => 
+						latitude   = -3497859
+						longitude = -5808001
+						altitude   = 46.90m
+						speed      = 0.476389m/s[0m
+-3497859
+-5808001
+46.90
+0.476389
+[0;32mI (125757) uart: queue free spaces: 16[0m
+[0;32mI (125757) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (126427) gps_demo: 2023/10/15 18:25:13 => 
+						latitude   = -3497858
+						longitude = -5808000
+						altitude   = 47.00m
+						speed      = 0.312500m/s[0m
+-3497858
+-5808000
+47.00
+0.312500
+[0;32mI (137157) uart: queue free spaces: 16[0m
+[0;32mI (137157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (138167) gps_demo: 2023/10/15 18:25:25 => 
+						latitude   = -3497860
+						longitude = -5808000
+						altitude   = 46.80m
+						speed      = 0.339167m/s[0m
+-3497860
+-5808000
+46.80
+0.339167
+[0;32mI (148557) uart: queue free spa

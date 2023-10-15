@@ -1,0 +1,363 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0afc0h ( 44992) map[0m
+[0;32mI (120) esp_image: segment 1: paddr=0001afe8 vaddr=3ffb0000 size=02158h (  8536) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001d148 vaddr=40080000 size=02ed0h ( 11984) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19714h (104212) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=0003973c vaddr=40082ed0 size=0a22ch ( 41516) load[0m
+[0;32mI (196) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (196) boot: Disabling RNG early entropy source...[0m
+[0;32mI (208) cpu_start: Multicore app[0m
+[0;32mI (208) cpu_start: Pro cpu up.[0m
+[0;32mI (208) cpu_start: Starting app cpu, entry point is 0x400811e4[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (226) cpu_start: Pro cpu start user code[0m
+[0;32mI (226) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (226) cpu_start: Application information:[0m
+[0;32mI (231) cpu_start: Project name:     nmea_parser[0m
+[0;32mI (236) cpu_start: App version:      1[0m
+[0;32mI (241) cpu_start: Compile time:     Oct 15 2023 03:01:35[0m
+[0;32mI (247) cpu_start: ELF file SHA256:  c8d506c3eb74bdf4...[0m
+[0;32mI (253) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (258) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (262) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (267) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (272) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (279) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (285) heap_init: At 3FFB29C8 len 0002D638 (181 KiB): DRAM[0m
+[0;32mI (291) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (298) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (304) heap_init: At 4008D0FC len 00012F04 (75 KiB): IRAM[0m
+[0;32mI (312) spi_flash: detected chip: gd[0m
+[0;32mI (315) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (332) app_start: Starting scheduler on CPU0[0m
+[0;32mI (337) app_start: Starting scheduler on CPU1[0m
+[0;32mI (337) main_task: Started on CPU0[0m
+[0;32mI (347) main_task: Calling app_main()[0m
+[0;32mI (347) uart: queue free spaces: 16[0m
+[0;32mI (347) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (847) gps_demo: 2023/10/15 17:24:1 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (11757) uart: queue free spaces: 16[0m
+[0;32mI (11757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (11777) gps_demo: Unknown statement:!�eEu�,,,,,,,,N*30
+[0m
+[0;32mI (12637) gps_demo: 2023/10/15 17:24:13 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (23157) uart: queue free spaces: 16[0m
+[0;32mI (23157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (23937) gps_demo: 2023/10/15 17:24:24 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (34557) uart: queue free spaces: 16[0m
+[0;33mW (34557) nmea_parser: Rx Break[0m
+[0;32mI (34557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (34607) gps_demo: Unknown statement:202435.00,V,,,,,,,151023,,,N*7B
+[0m
+[0;32mI (35757) gps_demo: 2023/10/15 17:24:36 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (45957) uart: queue free spaces: 16[0m
+[0;32mI (45957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (46837) gps_demo: 2023/10/15 17:24:47 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (57357) uart: queue free spaces: 16[0m
+[0;32mI (57357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (57857) gps_demo: 2023/10/15 17:24:58 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (68757) uart: queue free spaces: 16[0m
+[0;33mW (68757) nmea_parser: Rx Break[0m
+[0;32mI (68757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (68807) gps_demo: Unknown statement:09.00,V,N*46
+[0m
+[0;32mI (69857) gps_demo: 2023/10/15 17:25:10 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (80157) uart: queue free spaces: 16[0m
+[0;32mI (80157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (80837) gps_demo: 2023/10/15 17:25:21 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (91557) uart: queue free spaces: 16[0m
+[0;32mI (91557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (91587) gps_demo: Unknown statement:(I�����r��b��,,,,,,151023,,,N*7D
+[0m
+[0;32mI (92637) gps_demo: 2023/10/15 17:25:33 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (102957) uart: queue free spaces: 16[0m
+[0;32mI (102957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (103837) gps_demo: 2023/10/15 17:25:44 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (114357) uart: queue free spaces: 16[0m
+[0;32mI (114357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (114857) gps_demo: 2023/10/15 17:25:55 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (125757) uart: queue free spaces: 16[0m
+[0;32mI (125757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (125767) gps_demo: Unknown statement:@TG,,,,,,,,,N*30
+[0m
+[0;32mI (126637) gps_demo: 2023/10/15 17:26:7 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (137157) uart: queue free spaces: 16[0m
+[0;32mI (137157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (138007) gps_demo: 2023/10/15 17:26:18 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (148557) uart: queue free spaces: 16[0m
+[0;32mI (148557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (148587) gps_demo: Unknown statement:&����r��b��,,,,,,151023,,,N*74
+[0m
+[0;32mI (149757) gps_demo: 2023/10/15 17:26:30 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (159957) uart: queue free spaces: 16[0m
+[0;32mI (159957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (160837) gps_demo: 2023/10/15 17:26:41 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (171357) uart: queue free spaces: 16[0m
+[0;32mI (171357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (171857) gps_demo: 2023/10/15 17:26:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (182757) uart: queue free spaces: 16[0m
+[0;32mI (182757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (182767) gps_demo: Unknown statement:�b��N*4E
+[0m
+[0;32mI (183837) gps_demo: 2023/10/15 17:27:4 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (194157) uart: queue free spaces: 16[0m
+[0;32mI (194157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (194837) gps_demo: 2023/10/15 17:27:15 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (205557) uart: queue free spaces: 16[0m
+[0;32mI (205557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (205587) gps_demo: Unknown statement:2726.00,V,,,,,,,151023,,,N*7A
+[0m
+[0;32mI (206637) gps_demo: 2023/10/15 17:27:27 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (216957) uart: queue free spaces: 16[0m
+[0;32mI (216957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (217837) gps_demo: 2023/10/15 17:27:38 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (228357) uart: queue free spaces: 16[0m
+[0;32mI (228357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (228857) gps_demo: 2023/10/15 17:27:49 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (239757) uart: queue free spaces: 16[0m
+[0;33mW (239757) nmea_parser: Rx Break[0m
+[0;32mI (239757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (239807) gps_demo: Unknown statement:PVTG,,,,,,,,,N*30
+[0m
+[0;32mI (240637) gps_demo: 2023/10/15 17:28:1 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (251157) uart: queue free spaces: 16[0m
+[0;32mI (251157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (251997) gps_demo: 2023/10/15 17:28:12 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (262557) uart: queue free spaces: 16[0m
+[0;32mI (262557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (262597) gps_demo: Unknown statement:�%��202823.00,V,,,,,,,151023,,,N*70
+[0m
+[0;33mW (262597) gps_demo: Unknown statement:�%��202823.00,V,,,,,,,151023,,,N*70
+[0m
+[0;32mI (263747) gps_demo: 2023/10/15 17:28:24 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (273957) uart: queue free spaces: 16[0m
+[0;32mI (273957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (274837) gps_demo: 2023/10/15 17:28:35 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (285357) uart: queue free spaces: 16[0m
+[0;32mI (285357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (285857) gps_demo: 2023/10/15 17:28:46 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (296757) uart: queue free spaces: 16[0m
+[0;32mI (296757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (296777) gps_demo: Unknown statement:�L,,,,,202857.00,V,N*40
+[0m
+[0;32mI (297837) gps_demo: 2023/10/15 17:28:58 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (308157) uart: queue free spaces: 16[0m
+[0;32mI (308157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (308837) gps_demo: 2023/10/15 17:29:9 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (319557) uart: queue free spaces: 16[0m
+[0;32mI (319557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (319597) gps_demo: Unknown statement:%��202920.00,V,,,,,,,151023,,,N*72
+[0m
+[0;33mW (319597) gps_demo: Unknown statement:%��202920.00,V,,,,,,,151023,,,N*72
+[0m
+[0;32mI (320587) gps_demo: 2023/10/15 17:29:21 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (330957) uart: queue free spaces: 16[0m
+[0;32mI (330957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (331837) gps_demo: 2023/10/15 17:29:32 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (342357) uart: queue free spaces: 16[0m
+[0;32mI (342357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (342857) gps_demo: 2023/10/15 17:29:43 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (353757) uart: queue free spaces: 16[0m
+[0;33mW (353757) nmea_parser: Rx Break[0m
+[0;32mI (353757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (353807) gps_demo: Unknown statement:GPVTG,,,,,,,,,N*30
+[0m
+[0;32mI (354637) gps_demo: 2023/10/15 17:29:55 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (365157) uart: queue free spaces: 16[0m
+[0;32mI (365157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (365997) gps_demo: 2023/10/15 17:30:6 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (376557) uart: queue free spaces: 16[0m
+[0;32mI (376557) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (376557) nmea_parser: Rx Break[0m
+[0;32mI (377747) gps_demo: 2023/10/15 17:30:18 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (387957) uart: queue free spaces: 16[0m
+[0;32mI (387957) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (388837) gps_demo: 2023/10/15 17:30:29 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (399357) uart: queue free spaces: 16[0m
+[0;32mI (399357) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (399857) gps_demo: 2023/10/15 17:30:40 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (410757) uart: queue free spaces: 16[0m
+[0;33mW (410757) nmea_parser: Rx Break[0m
+[0;32mI (410757) nmea_parser: NMEA Parser init OK[0m
+[0;33mW (410807) gps_demo: Unknown statement:r�4F
+[0m
+[0;32mI (411857) gps_demo: 2023/10/15 17:30:52 => 
+						latitude   = 0.00000°N
+						longitude = 0.00000°E
+						altitude   = 0.00m
+						speed      = 0.000000m/s[0m
+15[0;32mI (422157) uart: queue free spaces: 16[0m
+[0;32mI (422157) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (422837) gps_demo: 2023/10/15 17:31:3 => 
+						latitude   = 0.00000°N
+						lon
