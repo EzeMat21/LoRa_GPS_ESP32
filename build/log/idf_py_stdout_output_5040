@@ -1,0 +1,155 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 15 2023 02:19:42[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c530h ( 50480) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001c558 vaddr=3ffb0000 size=0227ch (  8828) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001e7dc vaddr=40080000 size=0183ch (  6204) load[0m
+[0;32mI (131) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1b984h (113028) map[0m
+[0;32mI (177) esp_image: segment 4: paddr=0003b9ac vaddr=4008183c size=0ce70h ( 52848) load[0m
+[0;32mI (207) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (207) boot: Disabling RNG early entropy source...[0m
+[0;32mI (218) cpu_start: Multicore app[0m
+[0;32mI (219) cpu_start: Pro cpu up.[0m
+[0;32mI (219) cpu_start: Starting app cpu, entry point is 0x4008128c[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (237) cpu_start: Pro cpu start user code[0m
+[0;32mI (237) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (237) cpu_start: Application information:[0m
+[0;32mI (242) cpu_start: Project name:     nmea_parser[0m
+[0;32mI (247) cpu_start: App version:      5f34df6-dirty[0m
+[0;32mI (252) cpu_start: Compile time:     Oct 22 2023 16:37:07[0m
+[0;32mI (258) cpu_start: ELF file SHA256:  05288ea5a617e5d4...[0m
+[0;32mI (264) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (269) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (274) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (279) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (284) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (291) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (297) heap_init: At 3FFB2B30 len 0002D4D0 (181 KiB): DRAM[0m
+[0;32mI (303) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (309) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (316) heap_init: At 4008E6AC len 00011954 (70 KiB): IRAM[0m
+[0;32mI (323) spi_flash: detected chip: gd[0m
+[0;32mI (326) spi_flash: flash io: dio[0m
+[0;33mW (330) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (344) app_start: Starting scheduler on CPU0[0m
+[0;32mI (348) app_start: Starting scheduler on CPU1[0m
+[0;32mI (348) main_task: Started on CPU0[0m
+[0;32mI (358) main_task: Calling app_main()[0m
+[0;32mI (368) uart: queue free spaces: 16[0m
+[0;32mI (368) nmea_parser: NMEA Parser init OK[0m
+packet sent...
+0
+255
+202
+160
+115
+255
+167
+96
+165
+0
+Packet N°:0, 0, 0, RSSI:-54 dBm, SNR:11.500000 dB
+Packet N°:1, -3497864, -5807975, RSSI:-55 dBm, SNR:11.500000 dB
+Packet N°:2, -3497871, -5807974, RSSI:-43 dBm, SNR:10.500000 dB
+Packet N°:3, -3497869, -5807972, RSSI:-37 dBm, SNR:10.750000 dB
+Packet N°:4, -3497869, -5807973, RSSI:-36 dBm, SNR:12.250000 dB
+Packet N°:5, -3497870, -5807974, RSSI:-69 dBm, SNR:11.000000 dB
+Packet N°:6, -3497871, -5807972, RSSI:-71 dBm, SNR:10.750000 dB
+Packet N°:7, -3497872, -5807971, RSSI:-59 dBm, SNR:11.250000 dB
+Packet N°:8, -1, -1, RSSI:-87 dBm, SNR:11.250000 dB
+Packet N°:9, -1, -1, RSSI:-83 dBm, SNR:11.000000 dB
+Packet N°:10, -1, -1, RSSI:-93 dBm, SNR:11.000000 dB
+Packet N°:11, -3497850, -5807929, RSSI:-101 dBm, SNR:11.250000 dB
+Packet N°:12, -3497843, -5807923, RSSI:-109 dBm, SNR:8.750000 dB
+Packet N°:13, -3497835, -5807914, RSSI:-116 dBm, SNR:2.000000 dB
+Packet N°:14, -3497828, -5807908, RSSI:-117 dBm, SNR:-1.750000 dB
+Packet N°:15, -3497821, -5807898, RSSI:-107 dBm, SNR:10.000000 dB
+Packet N°:16, -1, -1, RSSI:-110 dBm, SNR:6.250000 dB
+Packet N°:17, -1, -1, RSSI:-111 dBm, SNR:7.500000 dB
+Packet N°:18, -1, -1, RSSI:-109 dBm, SNR:8.750000 dB
+Packet N°:19, -3497794, -5807871, RSSI:-115 dBm, SNR:3.750000 dB
+Packet N°:21, -3497774, -5807854, RSSI:-108 dBm, SNR:8.750000 dB
+Packet N°:23, -3497763, -5807834, RSSI:-118 dBm, SNR:-1.000000 dB
+Packet N°:25, -3497748, -5807818, RSSI:-102 dBm, SNR:10.500000 dB
+Packet N°:26, -3497740, -5807809, RSSI:-107 dBm, SNR:9.500000 dB
+Packet N°:27, -3497733, -5807800, RSSI:-116 dBm, SNR:1.500000 dB
+Packet N°:27, -3497733, -5807800, RSSI:-119 dBm, SNR:-8.250000 dB
+Packet N°:30, -3497709, -5807776, RSSI:-118 dBm, SNR:-2.000000 dB
+Packet N°:31, 0, 0, RSSI:-108 dBm, SNR:9.500000 dB
+Packet N°:32, 0, 0, RSSI:-115 dBm, SNR:3.000000 dB
+Packet N°:33, -3497685, -5807750, RSSI:-117 dBm, SNR:-0.500000 dB
+Packet N°:34, -3497678, -5807737, RSSI:-109 dBm, SNR:9.000000 dB
+Packet N°:35, 0, 0, RSSI:-115 dBm, SNR:3.250000 dB
+Packet N°:36, -3497666, -5807725, RSSI:-116 dBm, SNR:0.750000 dB
+Packet N°:37, 0, 0, RSSI:-115 dBm, SNR:2.750000 dB
+Packet N°:38, 0, 0, RSSI:-113 dBm, SNR:6.000000 dB
+Packet N°:39, -3497643, -5807704, RSSI:-118 dBm, SNR:-0.750000 dB
+Packet N°:40, -3497638, -5807697, RSSI:-115 dBm, SNR:4.250000 dB
+Packet N°:41, -3497631, -5807687, RSSI:-117 dBm, SNR:-1.750000 dB
+Packet N°:41, -3497631, -5807687, RSSI:-118 dBm, SNR:-7.500000 dB
+Packet N°:68, -3497590, -5807641, RSSI:-119 dBm, SNR:-4.500000 dB
+Packet N°:68, -3497590, -5807641, RSSI:-119 dBm, SNR:-8.500000 dB
+Packet N°:70, -3497599, -5807656, RSSI:-118 dBm, SNR:-2.750000 dB
+Packet N°:71, -3497606, -5807663, RSSI:-111 dBm, SNR:7.750000 dB
+Packet N°:72, -3497614, -5807672, RSSI:-112 dBm, SNR:7.000000 dB
+Packet N°:73, -3497620, -5807680, RSSI:-110 dBm, SNR:7.750000 dB
+Packet N°:74, -3497627, -5807689, RSSI:-117 dBm, SNR:-0.500000 dB
+Packet N°:75, -3497634, -5807697, RSSI:-111 dBm, SNR:8.500000 dB
+Packet N°:76, -3497642, -5807706, RSSI:-116 dBm, SNR:0.750000 dB
+Packet N°:77, -3497649, -5807713, RSSI:-108 dBm, SNR:9.500000 dB
+Packet N°:78, -3497657, -5807722, RSSI:-104 dBm, SNR:10.250000 dB
+Packet N°:79, -3497664, -5807728, RSSI:-106 dBm, SNR:10.000000 dB
+Packet N°:80, -3497671, -5807737, RSSI:-118 dBm, SNR:-1.500000 dB
+Packet N°:81, -3497679, -5807745, RSSI:-108 dBm, SNR:9.750000 dB
+Packet N°:82, -3497686, -5807754, RSSI:-106 dBm, SNR:10.000000 dB
+Packet N°:83, -3497694, -5807763, RSSI:-112 dBm, SNR:6.500000 dB
+Packet N°:84, -3497699, -5807771, RSSI:-102 dBm, SNR:11.000000 dB
+Packet N°:85, -3497709, -5807780, RSSI:-99 dBm, SNR:10.500000 dB
+Packet N°:86, -3497716, -5807787, RSSI:-101 dBm, SNR:10.750000 dB
+Packet N°:87, -3497725, -5807797, RSSI:-99 dBm, SNR:11.000000 dB
+Packet N°:88, -3497732, -5807804, RSSI:-107 dBm, SNR:9.500000 dB
+Packet N°:89, -3497740, -5807813, RSSI:-110 dBm, SNR:8.750000 dB
+Packet N°:90, -3497747, -5807820, RSSI:-105 dBm, SNR:10.750000 dB
+Packet N°:91, -3497754, -5807827, RSSI:-108 dBm, SNR:8.750000 dB
+Packet N°:92, -3497761, -5807836, RSSI:-105 dBm, SNR:10.250000 dB
+Packet N°:93, -3497768, -5807844, RSSI:-98 dBm, SNR:10.750000 dB
+Packet N°:94, -3497776, -5807853, RSSI:-103 dBm, SNR:10.750000 dB
+Packet N°:95, -3497782, -5807860, RSSI:-91 dBm, SNR:11.250000 dB
+Packet N°:96, -3497791, -5807868, RSSI:-100 dBm, SNR:11.000000 dB
+Packet N°:97, -3497797, -5807877, RSSI:-90 dBm, SNR:11.500000 dB
+Packet N°:98, -3497801, -5807892, RSSI:-111 dBm, SNR:7.750000 dB
+Packet N°:99, -3497811, -5807908, RSSI:-111 dBm, SNR:7.500000 dB
+Packet N°:100, -3497827, -5807924, RSSI:-93 dBm, SNR:12.000000 dB
+Packet N°:101, -3497838, -5807939, RSSI:-80 dBm, SNR:11.500000 dB
+Packet N°:102, 0, 0, RSSI:-90 dBm, SNR:11.250000 dB
+Packet N°:103, -3497865, -5807964, RSSI:-81 dBm, SNR:10.500000 dB
+Packet N°:104, -3497869, -5807970, RSSI:-64 dBm, SNR:11.250000 dB
+Packet N°:105, -3497868, -5807971, RSSI:-63 dBm, SNR:11.500000 dB
+Packet N°:106, -3497868, -5807972, RSSI:-62 dBm, SNR:11.000000 dB
+Packet N°:107, -3497868, -5807972, RSSI:-61 dBm, SNR:11.250000 dB
+Packet N°:108, -3497868, -5807972, RSSI:-62 dBm, SNR:11.250000 dB
+Packet N°:109, -3497868, -5807971, RSSI:-65 dBm, SNR:11.000000 dB

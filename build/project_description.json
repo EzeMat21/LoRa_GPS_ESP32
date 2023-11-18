@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "nmea_parser",
-    "project_version":    "1",
+    "project_version":    "5f34df6-dirty",
     "project_path":       "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser",
     "idf_path":           "C:/ESP32/esp-idf",
     "build_dir":          "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/build",

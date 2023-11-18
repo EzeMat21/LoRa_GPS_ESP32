@@ -2,7 +2,9 @@
   "C_Cpp.intelliSenseEngine": "default",
   "files.associations": {
     "freertos.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "bitset": "c",
+    "algorithm": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "idf.adapterTargetName": "esp32",

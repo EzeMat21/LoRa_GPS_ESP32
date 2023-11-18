@@ -372,7 +372,7 @@ lora_init(void)
    lora_write_reg(REG_FIFO_RX_BASE_ADDR, 0);
    lora_write_reg(REG_FIFO_TX_BASE_ADDR, 0);
    lora_write_reg(REG_LNA, lora_read_reg(REG_LNA) | 0x03);
-   lora_write_reg(REG_MODEM_CONFIG_3, 0x04);
+   lora_write_reg(REG_MODEM_CONFIG_3, 0x0C);          //LowDataRateOptimize Enable y  LNA gain set by the internal AGC loop Enable
    lora_set_tx_power(17);
 
    lora_idle();

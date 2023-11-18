@@ -699,7 +699,11 @@ nmea_parser_handle_t nmea_parser_init(const nmea_parser_config_t *config)
     /* Set pattern queue size */
     uart_pattern_queue_reset(esp_gps->uart_port, config->uart.event_queue_size);
     uart_flush(esp_gps->uart_port);
+
+    
+
     /* Create Event loop */
+    
     esp_event_loop_args_t loop_args = {
         .queue_size = NMEA_EVENT_LOOP_QUEUE_SIZE,
         .task_name = NULL

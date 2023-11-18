@@ -14,6 +14,38 @@
 #include "esp_log.h"
 #include "nmea_parser.h"
 #include "lora.h"
+#include "driver/gpio.h"
+
+
+//------------------------------------------------------------------------------------------------------------------------
+
+TaskHandle_t TaskHandleLora = NULL;
+TaskHandle_t TaskHandleGPS = NULL;
+
+QueueHandle_t queueGPS_Lora;  // Cola donde el GPS le avisa al LoRa para transmitir
+
+
+//------------------------------------------------------------------------------------------------------------------------
+//Interrupcion por pin
+
+#define INPUT_PIN 13
+#define LED_PIN 25
+
+int state = 0;
+QueueHandle_t interputQueue;
+
+static void IRAM_ATTR gpio_interrupt_handler(void *args)
+{
+    int pinNumber = (int)args;
+    xQueueSendFromISR(interputQueue, &pinNumber, NULL);
+}
+
+
+void entry_LoraTask(void *params);
+void entry_GPSTask(void *params);
+void entry_Boton(void *params);
+
+//------------------------------------------------------------------------------------------------------------------------
 
 static const char *TAG = "gps_demo";
 
@@ -33,6 +65,9 @@ static const char *TAG = "gps_demo";
 
 gps_t *gps = NULL;
 int lat, lon;
+
+uint8_t contador = 0;
+uint8_t buffer[10];
 
 static void gps_event_handler(void *event_handler_arg, esp_event_base_t event_base, int32_t event_id, void *event_data)
 {
@@ -63,91 +98,126 @@ static void gps_event_handler(void *event_handler_arg, esp_event_base_t event_ba
 }
 
 
-/*void task_tx(void *p)
-{
-      int registro = lora_read_reg(0x1d);
-      printf("registro: %d\n", registro);
-      uint8_t contador = 0;
-   for(;;) {
-      contador++;
-      vTaskDelay(pdMS_TO_TICKS(5000));
-      
-      snprintf(buffer, 13, "Paquete n%d", contador);
-      lora_send_packet((uint8_t*)buffer, 13);
-      printf("packet sent...\n");
-      printf("%s\n",buffer);
-   }
-}*/
-
 void app_main(void)
-{
+{   
+ 
+    xTaskCreate(entry_Boton, "LED_Control_Task", 2048, NULL, 1, NULL);
+    gpio_install_isr_service(0);
+    gpio_isr_handler_add(INPUT_PIN, gpio_interrupt_handler, (void *)INPUT_PIN);
+
+
+
+    xTaskCreate(entry_LoraTask, "Tarea LoRa", 4096, NULL, 1, &TaskHandleLora);
+    xTaskCreate(entry_GPSTask, "Tarea GPS", 4096, NULL, 1, &TaskHandleGPS);
+
+}
+
+void entry_GPSTask(void *params){
+    
+
+    uint8_t txBuffer = 'T';
+    queueGPS_Lora = xQueueCreate(1, sizeof(txBuffer));
+
+    if (queueGPS_Lora == 0)
+    {
+        printf("Fallo al crear la cola = %p\n", queueGPS_Lora);
+    }
+
+        /* NMEA parser configuration */
+    nmea_parser_config_t config = NMEA_PARSER_CONFIG_DEFAULT();
+    /* init NMEA parser library */
+
+    while(1){
+
+        nmea_parser_handle_t nmea_hdl = nmea_parser_init(&config);
+        /* register event handler for NMEA parser library */
+        nmea_parser_add_handler(nmea_hdl, gps_event_handler, NULL);
+
+        vTaskDelay(1000/ portTICK_PERIOD_MS);
+
+
+        /* unregister event handler */
+        nmea_parser_remove_handler(nmea_hdl, gps_event_handler);
+        /* deinit NMEA parser library */
+        nmea_parser_deinit(nmea_hdl);
+
+        buffer[0] = contador;
+        contador++;
+
+        //Bytes del 1 al 4 corresponden a la latitud
+
+        for(uint8_t i=4; i>0;i--){
+            buffer[i] = lat;
+            lat = lat >>8;
+        }
+
+        //Bytes del 5 al 8 corresponden a la longitud
+
+        for(uint8_t i=8; i>4;i--){
+        buffer[i] = lon;
+        lon = lon >>8;
+        }
+
+        xQueueSend(queueGPS_Lora, &txBuffer, (TickType_t)10);
+
+        vTaskDelay(20000/ portTICK_PERIOD_MS);
+        printf("Hola estoy GPS\n");
+
+    }
+    
+}
+
+
+void entry_LoraTask(void *params){
 
     //Configuracion del LoRa
    lora_init();
    lora_set_frequency(915e6);
-   lora_set_bandwidth(125e3);          //Ancho de banda de 7.8kHz
-   lora_set_spreading_factor(12);      //SF = 12
+   lora_set_bandwidth(125E3);          //Ancho de banda de 7.8kHz
+   lora_set_spreading_factor(7);      //SF = 12
    lora_set_coding_rate(5);            //coding rate 4/5
    lora_set_preamble_length(8);
    lora_enable_crc();
-   //xTaskCreate(&task_tx, "task_tx", 2048, NULL, 5, NULL);
-
-
-    /* NMEA parser configuration */
-    nmea_parser_config_t config = NMEA_PARSER_CONFIG_DEFAULT();
-    /* init NMEA parser library */
-
-
-    uint8_t contador = 0;
-    uint8_t buffer[10];
+    
+    uint8_t rxBuffer;
 
     while(1){
+        if(xQueueReceive(queueGPS_Lora, &rxBuffer, (TickType_t)10)){
+            lora_send_packet((uint8_t*)buffer, 10);
+            printf("packet sent...\n");
 
-    nmea_parser_handle_t nmea_hdl = nmea_parser_init(&config);
-    /* register event handler for NMEA parser library */
-    nmea_parser_add_handler(nmea_hdl, gps_event_handler, NULL);
-
-    vTaskDelay(1400/ portTICK_PERIOD_MS);
-
-
-    /* unregister event handler */
-    nmea_parser_remove_handler(nmea_hdl, gps_event_handler);
-    /* deinit NMEA parser library */
-    nmea_parser_deinit(nmea_hdl);
-
-    printf("%d\n", lat);
-    printf("%d\n", lon);
-
-      //snprintf(buffer, 10, "P%d%d%d", contador,lat,lon);
-    
-    buffer[0] = contador;
-    contador++;
-
-    //Bytes del 1 al 4 corresponden a la latitud
-
-    for(uint8_t i=4; i>0;i--){
-        buffer[i] = lat;
-        lat = lat >>8;
+            for(int i=0;i<10;i++){
+                printf("%u\n",buffer[i]);
+            }
+        }
+        vTaskDelay(10/portTICK_PERIOD_MS);
     }
-
-    //Bytes del 5 al 8 corresponden a la longitud
-
-    for(uint8_t i=8; i>4;i--){
-    buffer[i] = lon;
-    lon = lon >>8;
-    }
-
-      lora_send_packet((uint8_t*)buffer, 10);
-      printf("packet sent...\n");
-
-      for(int i=0;i<10;i++){
-        printf("%u\n",buffer[i]);
-      }
-
-    vTaskDelay(10000/ portTICK_PERIOD_MS);
-    }
-
-
-    
 }
 
+
+void entry_Boton(void *params)
+{   
+    esp_rom_gpio_pad_select_gpio(LED_PIN);
+    gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
+
+    esp_rom_gpio_pad_select_gpio(INPUT_PIN);
+    gpio_set_direction(INPUT_PIN, GPIO_MODE_INPUT);
+    gpio_pulldown_en(INPUT_PIN);
+    gpio_pullup_dis(INPUT_PIN);
+    gpio_set_intr_type(INPUT_PIN, GPIO_INTR_POSEDGE);
+
+    interputQueue = xQueueCreate(10, sizeof(int));
+    uint8_t pinNumber, count = 0;
+    while (true)
+    {
+        if (xQueueReceive(interputQueue, &pinNumber, 100))
+        {
+            printf("GPIO %d was pressed %d times. The state is %d\n", pinNumber, count++, gpio_get_level(INPUT_PIN));
+            buffer[9] = count;
+            gpio_set_level(LED_PIN, gpio_get_level(INPUT_PIN));
+        }
+
+        //printf("Hola\n");
+        vTaskDelay(10/portTICK_PERIOD_MS);
+    }
+}
