@@ -1,3 +1,3 @@
-idf_component_register(SRCS "lora.c" "nmea_parser_example_main.c"
-                            "nmea_parser.c"
-                    INCLUDE_DIRS ".")
+idf_component_register(SRCS "sources/lora.c" "main.c"
+                            "sources/nmea_parser.c" "sources/ssd1306.c" "sources/ssd1306_i2c.c"
+                    INCLUDE_DIRS "." "headers")

@@ -7,32 +7,42 @@
    CONDITIONS OF ANY KIND, either express or implied.
 */
 
+//------------------------------------------INCLUDES---------------------------------------------------------------------
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
-#include "nmea_parser.h"
-#include "lora.h"
-#include "driver/gpio.h"
+#include "nmea_parser.h"       //GPS
+#include "lora.h"              //LORA
+#include "driver/gpio.h"       //GPIO, PINES
+//#include "esp_sleep.h"
+
+#include "ssd1306.h"            //PANTALLA OLED
+#include "font8x8_basic.h"
 
 
-//------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------HANDLERS PARA LAS COLAS -------------------------------------------------------------------------
 
 TaskHandle_t TaskHandleLora = NULL;
 TaskHandle_t TaskHandleGPS = NULL;
+TaskHandle_t TaskHandlePantalla = NULL;
 
 QueueHandle_t queueGPS_Lora;  // Cola donde el GPS le avisa al LoRa para transmitir
+QueueHandle_t interputQueue;  //Cola de la rutina de interrupcion a la tarea Boton
+QueueHandle_t queueLoRaPantalla;
 
+//-------------------------------INTERRUPCCION POR PIN (ESTO ES PARA EL PIQUE= ------------------------------------------------------
 
-//------------------------------------------------------------------------------------------------------------------------
-//Interrupcion por pin
 
 #define INPUT_PIN 13
 #define LED_PIN 25
 
 int state = 0;
-QueueHandle_t interputQueue;
+
+
+//RUTINA DE INTERRUPCION PARA EL PIN DE PIQUE
 
 static void IRAM_ATTR gpio_interrupt_handler(void *args)
 {
@@ -43,9 +53,10 @@ static void IRAM_ATTR gpio_interrupt_handler(void *args)
 
 void entry_LoraTask(void *params);
 void entry_GPSTask(void *params);
-void entry_Boton(void *params);
+void entry_BotonTask(void *params);
+void entry_PantallaTask(void *params);
 
-//------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------GPS HANDLER------------------------------------------------------------------
 
 static const char *TAG = "gps_demo";
 
@@ -98,20 +109,30 @@ static void gps_event_handler(void *event_handler_arg, esp_event_base_t event_ba
 }
 
 
+//------------------------------------------- MAIN --------------------------------------------------------------------------
+
+
 void app_main(void)
 {   
  
-    xTaskCreate(entry_Boton, "LED_Control_Task", 2048, NULL, 1, NULL);
+    xTaskCreate(entry_BotonTask, "Boton_Task", 2048, NULL, 1, NULL);
     gpio_install_isr_service(0);
     gpio_isr_handler_add(INPUT_PIN, gpio_interrupt_handler, (void *)INPUT_PIN);
 
 
-
     xTaskCreate(entry_LoraTask, "Tarea LoRa", 4096, NULL, 1, &TaskHandleLora);
     xTaskCreate(entry_GPSTask, "Tarea GPS", 4096, NULL, 1, &TaskHandleGPS);
+    xTaskCreate(entry_PantallaTask, "Tarea Pantalla", 4096, NULL, 1, &TaskHandlePantalla);
 
 }
 
+
+
+
+
+//-----------------------------------------TAREAS----------------------------------------------------------------------------------
+ 
+//TAREA OBTENCION DE DATOS CON EL GPS
 void entry_GPSTask(void *params){
     
 
@@ -160,14 +181,18 @@ void entry_GPSTask(void *params){
 
         xQueueSend(queueGPS_Lora, &txBuffer, (TickType_t)10);
 
+        /*if(esp_sleep_enable_timer_wakeup(20*100000)){
+            printf("Sleep\n");
+        }*/
         vTaskDelay(20000/ portTICK_PERIOD_MS);
-        printf("Hola estoy GPS\n");
+        //printf("Hola estoy GPS\n");
 
     }
     
 }
 
 
+//TAREA TRANSMISION DE DATOS POR LORA
 void entry_LoraTask(void *params){
 
     //Configuracion del LoRa
@@ -178,24 +203,34 @@ void entry_LoraTask(void *params){
    lora_set_coding_rate(5);            //coding rate 4/5
    lora_set_preamble_length(8);
    lora_enable_crc();
-    
-    uint8_t rxBuffer;
 
+    uint8_t txBuffer;
+    uint8_t rxBuffer;
+    queueLoRaPantalla = xQueueCreate(1, sizeof(txBuffer));
+
+    if (queueLoRaPantalla == 0)
+    {
+        printf("Fallo al crear la cola = %p\n", queueLoRaPantalla);
+    }
+    
     while(1){
         if(xQueueReceive(queueGPS_Lora, &rxBuffer, (TickType_t)10)){
             lora_send_packet((uint8_t*)buffer, 10);
-            printf("packet sent...\n");
-
+            txBuffer = buffer[0];
+            xQueueSend(queueLoRaPantalla, &txBuffer, (TickType_t)10);
+           
+            /*printf("packet sent...\n");
             for(int i=0;i<10;i++){
                 printf("%u\n",buffer[i]);
-            }
+            }*/
         }
         vTaskDelay(10/portTICK_PERIOD_MS);
     }
 }
 
 
-void entry_Boton(void *params)
+//TAREA BOTON 
+void entry_BotonTask(void *params)
 {   
     esp_rom_gpio_pad_select_gpio(LED_PIN);
     gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
@@ -212,7 +247,7 @@ void entry_Boton(void *params)
     {
         if (xQueueReceive(interputQueue, &pinNumber, 100))
         {
-            printf("GPIO %d was pressed %d times. The state is %d\n", pinNumber, count++, gpio_get_level(INPUT_PIN));
+            //printf("GPIO %d was pressed %d times. The state is %d\n", pinNumber, count++, gpio_get_level(INPUT_PIN));
             buffer[9] = count;
             gpio_set_level(LED_PIN, gpio_get_level(INPUT_PIN));
         }
@@ -221,3 +256,47 @@ void entry_Boton(void *params)
         vTaskDelay(10/portTICK_PERIOD_MS);
     }
 }
+
+
+void entry_PantallaTask(void *params){
+    SSD1306_t dev;
+
+	ESP_LOGI(SSD1306_TAG, "INTERFACE is i2c");
+	ESP_LOGI(SSD1306_TAG, "CONFIG_SDA_GPIO=%d",CONFIG_SDA_GPIO);
+	ESP_LOGI(SSD1306_TAG, "CONFIG_SCL_GPIO=%d",CONFIG_SCL_GPIO);
+	ESP_LOGI(SSD1306_TAG, "CONFIG_RESET_GPIO=%d",CONFIG_RESET_GPIO);
+	i2c_master_init(&dev, CONFIG_SDA_GPIO, CONFIG_SCL_GPIO, CONFIG_RESET_GPIO);
+
+	ESP_LOGI(SSD1306_TAG, "Panel is 128x64");
+	ssd1306_init(&dev, 128, 64);
+
+	ssd1306_contrast(&dev, 0xff);
+	ssd1306_clear_screen(&dev, false);
+
+		int bitmapWidth = 128;
+		int width = ssd1306_get_width(&dev);
+		int xpos = width / 2; // center of width
+		xpos = xpos - bitmapWidth/2; 
+		int ypos = 0;
+		ESP_LOGD(SSD1306_TAG, "width=%d xpos=%d", width, xpos);
+		ssd1306_bitmaps(&dev, xpos, ypos, imagen1, 128, 64, false);
+		vTaskDelay(3000 / portTICK_PERIOD_MS);
+
+		uint8_t mensaje[20];
+        uint8_t rxBuffer;
+		
+	while(1) {
+		
+        if(xQueueReceive(queueLoRaPantalla, &rxBuffer, (TickType_t)10)){
+            sprintf((char *)mensaje, "Paquete N: %d", rxBuffer);
+            ssd1306_clear_screen(&dev, false);
+            ssd1306_display_text(&dev, 0, (char *)mensaje, sizeof(mensaje), false);
+            vTaskDelay(10/ portTICK_PERIOD_MS);
+        }
+
+	}
+}
+
+
+
+//------------------------------------------------------------------------------------------------------------------------
