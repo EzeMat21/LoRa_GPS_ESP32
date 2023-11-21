@@ -4,7 +4,8 @@
     "freertos.h": "c",
     "string.h": "c",
     "bitset": "c",
-    "algorithm": "c"
+    "algorithm": "c",
+    "i2c.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "idf.adapterTargetName": "esp32",

@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "nmea_parser",
-    "project_version":    "5f34df6-dirty",
+    "project_version":    "15c5076-dirty",
     "project_path":       "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser",
     "idf_path":           "C:/ESP32/esp-idf",
     "build_dir":          "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/build",
@@ -790,8 +790,8 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/main/lora.c", "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/main/nmea_parser_example_main.c", "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/main/nmea_parser.c" ],
-            "include_dirs": [ "." ]
+            "sources": [ "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/main/sources/lora.c", "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/main/main.c", "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/main/sources/nmea_parser.c", "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/main/sources/ssd1306.c", "C:/ESP32/Ejemplos/UART_NMEA0183/nmea0183_parser/main/sources/ssd1306_i2c.c" ],
+            "include_dirs": [ ".", "headers" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",

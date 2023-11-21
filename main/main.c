@@ -22,6 +22,24 @@
 #include "ssd1306.h"            //PANTALLA OLED
 #include "font8x8_basic.h"
 
+#include <freertos/semphr.h>
+
+
+//---------------------------------------- VARIABLES GLOBALES -----------------------------------------------------------------------------
+
+uint8_t buffer[10];
+
+// Declarar un mutex
+SemaphoreHandle_t mutex;
+
+void initMutex() {
+    // Crear el mutex
+    mutex = xSemaphoreCreateMutex();
+    if (mutex == NULL) {
+        // Manejar error si no se pudo crear el mutex
+        printf("Error al crear el mutex\n");
+    }
+}
 
 //-----------------------------------------HANDLERS PARA LAS COLAS -------------------------------------------------------------------------
 
@@ -77,8 +95,6 @@ static const char *TAG = "gps_demo";
 gps_t *gps = NULL;
 int lat, lon;
 
-uint8_t contador = 0;
-uint8_t buffer[10];
 
 static void gps_event_handler(void *event_handler_arg, esp_event_base_t event_base, int32_t event_id, void *event_data)
 {
@@ -114,13 +130,14 @@ static void gps_event_handler(void *event_handler_arg, esp_event_base_t event_ba
 
 void app_main(void)
 {   
- 
+    initMutex();
+
     xTaskCreate(entry_BotonTask, "Boton_Task", 2048, NULL, 1, NULL);
     gpio_install_isr_service(0);
     gpio_isr_handler_add(INPUT_PIN, gpio_interrupt_handler, (void *)INPUT_PIN);
 
 
-    xTaskCreate(entry_LoraTask, "Tarea LoRa", 4096, NULL, 1, &TaskHandleLora);
+    xTaskCreate(entry_LoraTask, "Tarea LoRa", 2048, NULL, 1, &TaskHandleLora);
     xTaskCreate(entry_GPSTask, "Tarea GPS", 4096, NULL, 1, &TaskHandleGPS);
     xTaskCreate(entry_PantallaTask, "Tarea Pantalla", 4096, NULL, 1, &TaskHandlePantalla);
 
@@ -135,7 +152,7 @@ void app_main(void)
 //TAREA OBTENCION DE DATOS CON EL GPS
 void entry_GPSTask(void *params){
     
-
+    uint8_t contador = 0;
     uint8_t txBuffer = 'T';
     queueGPS_Lora = xQueueCreate(1, sizeof(txBuffer));
 
@@ -162,21 +179,30 @@ void entry_GPSTask(void *params){
         /* deinit NMEA parser library */
         nmea_parser_deinit(nmea_hdl);
 
-        buffer[0] = contador;
-        contador++;
 
-        //Bytes del 1 al 4 corresponden a la latitud
+        if (xSemaphoreTake(mutex, portMAX_DELAY)) {
+            // Acceder al buffer global de forma segura
+            // Realizar operaciones en el buffer
 
-        for(uint8_t i=4; i>0;i--){
-            buffer[i] = lat;
-            lat = lat >>8;
-        }
+                buffer[0] = contador;
+                contador++;
 
-        //Bytes del 5 al 8 corresponden a la longitud
+                //Bytes del 1 al 4 corresponden a la latitud
 
-        for(uint8_t i=8; i>4;i--){
-        buffer[i] = lon;
-        lon = lon >>8;
+                for(uint8_t i=4; i>0;i--){
+                    buffer[i] = lat;
+                    lat = lat >>8;
+                }
+
+                //Bytes del 5 al 8 corresponden a la longitud
+
+                for(uint8_t i=8; i>4;i--){
+                buffer[i] = lon;
+                lon = lon >>8;
+                }
+
+            // Liberar el mutex después de realizar operaciones
+            xSemaphoreGive(mutex);
         }
 
         xQueueSend(queueGPS_Lora, &txBuffer, (TickType_t)10);
@@ -215,14 +241,26 @@ void entry_LoraTask(void *params){
     
     while(1){
         if(xQueueReceive(queueGPS_Lora, &rxBuffer, (TickType_t)10)){
-            lora_send_packet((uint8_t*)buffer, 10);
-            txBuffer = buffer[0];
+            if (xSemaphoreTake(mutex, portMAX_DELAY)) {
+                // Acceder al buffer global de forma segura
+                // Realizar operaciones en el buffer
+                    
+                    lora_send_packet((uint8_t*)buffer, 10);
+                    txBuffer = buffer[0];
+
+                    /*printf("packet sent...\n");
+                    for(int i=0;i<10;i++){
+                        printf("%u\n",buffer[i]);
+                    }*/
+                            
+                // Liberar el mutex después de realizar operaciones
+                xSemaphoreGive(mutex);
+            }
+            
             xQueueSend(queueLoRaPantalla, &txBuffer, (TickType_t)10);
-           
-            /*printf("packet sent...\n");
-            for(int i=0;i<10;i++){
-                printf("%u\n",buffer[i]);
-            }*/
+
+
+
         }
         vTaskDelay(10/portTICK_PERIOD_MS);
     }
@@ -247,9 +285,18 @@ void entry_BotonTask(void *params)
     {
         if (xQueueReceive(interputQueue, &pinNumber, 100))
         {
-            //printf("GPIO %d was pressed %d times. The state is %d\n", pinNumber, count++, gpio_get_level(INPUT_PIN));
-            buffer[9] = count;
+            if (xSemaphoreTake(mutex, portMAX_DELAY)) {
+                // Acceder al buffer global de forma segura
+                // Realizar operaciones en el buffer
+
+                //printf("GPIO %d was pressed %d times. The state is %d\n", pinNumber, count++, gpio_get_level(INPUT_PIN));
+                buffer[9] = count++;
+
+                // Liberar el mutex después de realizar operaciones
+                xSemaphoreGive(mutex);
+            }
             gpio_set_level(LED_PIN, gpio_get_level(INPUT_PIN));
+
         }
 
         //printf("Hola\n");
