@@ -47,8 +47,8 @@ TaskHandle_t TaskHandleLora = NULL;
 TaskHandle_t TaskHandleGPS = NULL;
 TaskHandle_t TaskHandlePantalla = NULL;
 
-QueueHandle_t queueGPS_Lora;  // Cola donde el GPS le avisa al LoRa para transmitir
-QueueHandle_t interputQueue;  //Cola de la rutina de interrupcion a la tarea Boton
+//QueueHandle_t queueGPS_Lora;  // Cola donde el GPS le avisa al LoRa para transmitir
+//QueueHandle_t interputQueue;  //Cola de la rutina de interrupcion a la tarea Boton
 QueueHandle_t queueLoRaPantalla;
 
 //-------------------------------INTERRUPCCION POR PIN (ESTO ES PARA EL PIQUE= ------------------------------------------------------
@@ -58,21 +58,44 @@ QueueHandle_t queueLoRaPantalla;
 #define LED_PIN 25
 
 int state = 0;
+volatile uint8_t contador_piques = 0;
 
 
 //RUTINA DE INTERRUPCION PARA EL PIN DE PIQUE
 
 static void IRAM_ATTR gpio_interrupt_handler(void *args)
 {
-    int pinNumber = (int)args;
-    xQueueSendFromISR(interputQueue, &pinNumber, NULL);
+    //int pinNumber = (int)args;
+    
+     if (xSemaphoreTakeFromISR(mutex, NULL)) {
+        // Acceder a la región crítica de memoria desde la ISR
+
+                //printf("GPIO %d was pressed %d times. The state is %d\n", pinNumber, count++, gpio_get_level(INPUT_PIN));
+                contador_piques++;
+                buffer[9] = contador_piques;
+                buffer[0]++;
+
+        // Liberar el mutex cuando hayas terminado de acceder
+        xSemaphoreGiveFromISR(mutex, NULL);
+    }
+
+     //gpio_set_level(LED_PIN, gpio_get_level(INPUT_PIN));
+
+    //xQueueSendFromISR(interputQueue, &pinNumber, NULL);
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    vTaskNotifyGiveFromISR(TaskHandleLora, &xHigherPriorityTaskWoken);
+    if (xHigherPriorityTaskWoken == pdTRUE) {
+      // Si se despertó una tarea de mayor prioridad, realizar una solicitud de cambio de contexto
+      portYIELD_FROM_ISR();
+    }
 }
 
 
 void entry_LoraTask(void *params);
 void entry_GPSTask(void *params);
-void entry_BotonTask(void *params);
 void entry_PantallaTask(void *params);
+//void entry_BotonTask(void *params);
+
 
 //--------------------------------------------------GPS HANDLER------------------------------------------------------------------
 
@@ -132,9 +155,18 @@ void app_main(void)
 {   
     initMutex();
 
-    xTaskCreate(entry_BotonTask, "Boton_Task", 2048, NULL, 1, NULL);
+    //xTaskCreate(entry_BotonTask, "Boton_Task", 2048, NULL, 1, NULL);
     gpio_install_isr_service(0);
     gpio_isr_handler_add(INPUT_PIN, gpio_interrupt_handler, (void *)INPUT_PIN);
+
+    esp_rom_gpio_pad_select_gpio(LED_PIN);
+    gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
+
+    esp_rom_gpio_pad_select_gpio(INPUT_PIN);
+    gpio_set_direction(INPUT_PIN, GPIO_MODE_INPUT);
+    gpio_pulldown_en(INPUT_PIN);
+    gpio_pullup_dis(INPUT_PIN);
+    gpio_set_intr_type(INPUT_PIN, GPIO_INTR_POSEDGE);
 
 
     xTaskCreate(entry_LoraTask, "Tarea LoRa", 2048, NULL, 1, &TaskHandleLora);
@@ -152,14 +184,14 @@ void app_main(void)
 //TAREA OBTENCION DE DATOS CON EL GPS
 void entry_GPSTask(void *params){
     
-    uint8_t contador = 0;
+    /*uint8_t contador = 0;
     uint8_t txBuffer = 'T';
     queueGPS_Lora = xQueueCreate(1, sizeof(txBuffer));
 
     if (queueGPS_Lora == 0)
     {
         printf("Fallo al crear la cola = %p\n", queueGPS_Lora);
-    }
+    }*/
 
         /* NMEA parser configuration */
     nmea_parser_config_t config = NMEA_PARSER_CONFIG_DEFAULT();
@@ -184,8 +216,7 @@ void entry_GPSTask(void *params){
             // Acceder al buffer global de forma segura
             // Realizar operaciones en el buffer
 
-                buffer[0] = contador;
-                contador++;
+                buffer[0]++;
 
                 //Bytes del 1 al 4 corresponden a la latitud
 
@@ -205,7 +236,8 @@ void entry_GPSTask(void *params){
             xSemaphoreGive(mutex);
         }
 
-        xQueueSend(queueGPS_Lora, &txBuffer, (TickType_t)10);
+        //xQueueSend(queueGPS_Lora, &txBuffer, (TickType_t)10);
+        xTaskNotifyGive(TaskHandleLora);
 
         /*if(esp_sleep_enable_timer_wakeup(20*100000)){
             printf("Sleep\n");
@@ -231,7 +263,7 @@ void entry_LoraTask(void *params){
    lora_enable_crc();
 
     uint8_t txBuffer;
-    uint8_t rxBuffer;
+    //uint8_t rxBuffer;
     queueLoRaPantalla = xQueueCreate(1, sizeof(txBuffer));
 
     if (queueLoRaPantalla == 0)
@@ -240,7 +272,7 @@ void entry_LoraTask(void *params){
     }
     
     while(1){
-        if(xQueueReceive(queueGPS_Lora, &rxBuffer, (TickType_t)10)){
+        if(ulTaskNotifyTake(pdTRUE, portMAX_DELAY)){
             if (xSemaphoreTake(mutex, portMAX_DELAY)) {
                 // Acceder al buffer global de forma segura
                 // Realizar operaciones en el buffer
@@ -249,7 +281,9 @@ void entry_LoraTask(void *params){
                     txBuffer = buffer[0];
 
                     /*printf("packet sent...\n");
-                    for(int i=0;i<10;i++){
+                    printf("%d\n",buffer[0]);
+                    printf("%d\n", buffer[9]);*/
+                    /*for(int i=0;i<10;i++){
                         printf("%u\n",buffer[i]);
                     }*/
                             
@@ -262,45 +296,7 @@ void entry_LoraTask(void *params){
 
 
         }
-        vTaskDelay(10/portTICK_PERIOD_MS);
-    }
-}
-
-
-//TAREA BOTON 
-void entry_BotonTask(void *params)
-{   
-    esp_rom_gpio_pad_select_gpio(LED_PIN);
-    gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
-
-    esp_rom_gpio_pad_select_gpio(INPUT_PIN);
-    gpio_set_direction(INPUT_PIN, GPIO_MODE_INPUT);
-    gpio_pulldown_en(INPUT_PIN);
-    gpio_pullup_dis(INPUT_PIN);
-    gpio_set_intr_type(INPUT_PIN, GPIO_INTR_POSEDGE);
-
-    interputQueue = xQueueCreate(10, sizeof(int));
-    uint8_t pinNumber, count = 0;
-    while (true)
-    {
-        if (xQueueReceive(interputQueue, &pinNumber, 100))
-        {
-            if (xSemaphoreTake(mutex, portMAX_DELAY)) {
-                // Acceder al buffer global de forma segura
-                // Realizar operaciones en el buffer
-
-                //printf("GPIO %d was pressed %d times. The state is %d\n", pinNumber, count++, gpio_get_level(INPUT_PIN));
-                buffer[9] = count++;
-
-                // Liberar el mutex después de realizar operaciones
-                xSemaphoreGive(mutex);
-            }
-            gpio_set_level(LED_PIN, gpio_get_level(INPUT_PIN));
-
-        }
-
-        //printf("Hola\n");
-        vTaskDelay(10/portTICK_PERIOD_MS);
+        //vTaskDelay(10/portTICK_PERIOD_MS);
     }
 }
 
@@ -344,6 +340,49 @@ void entry_PantallaTask(void *params){
 	}
 }
 
+
+
+/*
+//TAREA BOTON 
+void entry_BotonTask(void *params)
+{   
+    esp_rom_gpio_pad_select_gpio(LED_PIN);
+    gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
+
+    esp_rom_gpio_pad_select_gpio(INPUT_PIN);
+    gpio_set_direction(INPUT_PIN, GPIO_MODE_INPUT);
+    gpio_pulldown_en(INPUT_PIN);
+    gpio_pullup_dis(INPUT_PIN);
+    gpio_set_intr_type(INPUT_PIN, GPIO_INTR_POSEDGE);
+
+    //interputQueue = xQueueCreate(10, sizeof(int));
+
+    //uint8_t pinNumber, count = 0;
+    while (true)
+    {   
+        
+        if (xQueueReceive(interputQueue, &pinNumber, 100))
+        {
+            if (xSemaphoreTake(mutex, portMAX_DELAY)) {
+                // Acceder al buffer global de forma segura
+                // Realizar operaciones en el buffer
+
+                //printf("GPIO %d was pressed %d times. The state is %d\n", pinNumber, count++, gpio_get_level(INPUT_PIN));
+                count++;
+                buffer[9] = count;
+
+                // Liberar el mutex después de realizar operaciones
+                xSemaphoreGive(mutex);
+            }
+            gpio_set_level(LED_PIN, gpio_get_level(INPUT_PIN));
+
+        }
+
+        //printf("Hola\n");
+        vTaskDelay(10/portTICK_PERIOD_MS);
+    }
+}
+*/
 
 
 //------------------------------------------------------------------------------------------------------------------------

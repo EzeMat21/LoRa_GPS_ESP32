@@ -1,0 +1,145 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7080
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 20 2023 16:40:42[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0d478h ( 54392) map[0m
+[0;32mI (124) esp_image: segment 1: paddr=0001d4a0 vaddr=3ffb0000 size=02aach ( 10924) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=0001ff54 vaddr=40080000 size=000c4h (   196) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=2185ch (137308) map[0m
+[0;32mI (188) esp_image: segment 4: paddr=00041884 vaddr=400800c4 size=0ee50h ( 61008) load[0m
+[0;32mI (221) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (221) boot: Disabling RNG early entropy source...[0m
+[0;32mI (232) cpu_start: Multicore app[0m
+[0;32mI (233) cpu_start: Pro cpu up.[0m
+[0;32mI (233) cpu_start: Starting app cpu, entry point is 0x400812d0[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (251) cpu_start: Pro cpu start user code[0m
+[0;32mI (251) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (251) cpu_start: Application information:[0m
+[0;32mI (255) cpu_start: Project name:     nmea_parser[0m
+[0;32mI (261) cpu_start: App version:      7efbcd0-dirty[0m
+[0;32mI (266) cpu_start: Compile time:     Nov 21 2023 17:39:13[0m
+[0;32mI (272) cpu_start: ELF file SHA256:  2ba76d5a05609b69...[0m
+[0;32mI (278) cpu_start: ESP-IDF:          v5.1.1[0m
+[0;32mI (283) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (288) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (293) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (298) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (305) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (311) heap_init: At 3FFB3398 len 0002CC68 (179 KiB): DRAM[0m
+[0;32mI (317) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (323) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (330) heap_init: At 4008EF14 len 000110EC (68 KiB): IRAM[0m
+[0;32mI (337) spi_flash: detected chip: gd[0m
+[0;32mI (340) spi_flash: flash io: dio[0m
+[0;33mW (344) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (358) app_start: Starting scheduler on CPU0[0m
+[0;32mI (362) app_start: Starting scheduler on CPU1[0m
+[0;32mI (362) main_task: Started on CPU0[0m
+[0;32mI (372) main_task: Calling app_main()[0m
+[0;32mI (372) uart: queue free spaces: 16[0m
+[0;32mI (372) main_task: Returned from app_main()[0m
+[0;32mI (382) SSD1306: INTERFACE is i2c[0m
+[0;32mI (382) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (382) SSD1306: CONFIG_SDA_GPIO=4[0m
+[0;32mI (392) SSD1306: CONFIG_SCL_GPIO=15[0m
+[0;32mI (392) SSD1306: CONFIG_RESET_GPIO=16[0m
+[0;32mI (402) gpio: GPIO[16]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (462) SSD1306: Panel is 128x64[0m
+[0;32mI (462) SSD1306: OLED configured successfully[0m
+[0;32mI (21392) uart: queue free spaces: 16[0m
+[0;32mI (21392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (42392) uart: queue free spaces: 16[0m
+[0;32mI (42392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (63392) uart: queue free spaces: 16[0m
+[0;32mI (63392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (84392) uart: queue free spaces: 16[0m
+[0;32mI (84392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (105392) uart: queue free spaces: 16[0m
+[0;32mI (105392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (126392) uart: queue free spaces: 16[0m
+[0;32mI (126392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (147392) uart: queue free spaces: 16[0m
+[0;32mI (147392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (168392) uart: queue free spaces: 16[0m
+[0;32mI (168392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (189392) uart: queue free spaces: 16[0m
+[0;32mI (189392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (210392) uart: queue free spaces: 16[0m
+[0;32mI (210392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (231392) uart: queue free spaces: 16[0m
+[0;32mI (231392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (252392) uart: queue free spaces: 16[0m
+[0;32mI (252392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (273392) uart: queue free spaces: 16[0m
+[0;32mI (273392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (294392) uart: queue free spaces: 16[0m
+[0;32mI (294392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (315392) uart: queue free spaces: 16[0m
+[0;32mI (315392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (336392) uart: queue free spaces: 16[0m
+[0;32mI (336392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (357392) uart: queue free spaces: 16[0m
+[0;32mI (357392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (378392) uart: queue free spaces: 16[0m
+[0;32mI (378392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (399392) uart: queue free spaces: 16[0m
+[0;32mI (399392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (420392) uart: queue free spaces: 16[0m
+[0;32mI (420392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (441392) uart: queue free spaces: 16[0m
+[0;32mI (441392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (462392) uart: queue free spaces: 16[0m
+[0;32mI (462392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (483392) uart: queue free spaces: 16[0m
+[0;32mI (483392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (504392) uart: queue free spaces: 16[0m
+[0;32mI (504392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (525392) uart: queue free spaces: 16[0m
+[0;32mI (525392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (546392) uart: queue free spaces: 16[0m
+[0;32mI (546392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (567392) uart: queue free spaces: 16[0m
+[0;32mI (567392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (588392) uart: queue free spaces: 16[0m
+[0;32mI (588392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (609392) uart: queue free spaces: 16[0m
+[0;32mI (609392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (630392) uart: queue free spaces: 16[0m
+[0;32mI (630392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (651392) uart: queue free spaces: 16[0m
+[0;32mI (651392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (672392) uart: queue free spaces: 16[0m
+[0;32mI (672392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (693392) uart: queue free spaces: 16[0m
+[0;32mI (693392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (714392) uart: queue free spaces: 16[0m
+[0;32mI (714392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (735392) uart: queue free spaces: 16[0m
+[0;32mI (735392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (756392) uart: queue free spaces: 16[0m
+[0;32mI (756392) nmea_parser: NMEA Parser init OK[0m
+[0;32mI (777392) uart: queue free spaces: 16[0m
+[0;32mI (7
